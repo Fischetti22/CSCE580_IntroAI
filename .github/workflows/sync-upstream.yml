@@ -1,0 +1,49 @@
+name: Sync from upstream
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"   # every 6 hours
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout your repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Add upstream and fetch
+        run: |
+          git remote add upstream https://github.com/biplav-s/course-ai-f25.git || true
+          git fetch upstream
+          git fetch origin
+
+      - name: Ensure main is checked out locally
+        run: |
+          git checkout main
+
+      - name: Fast-forward merge from upstream
+        run: |
+          set -e
+          git merge --ff-only upstream/main || {
+            echo "No fast-forward possible (likely diverged)."
+            exit 0
+          }
+
+      - name: Push only if there are changes
+        run: |
+          if git diff --quiet origin/main...HEAD; then
+            echo "No changes to push."
+          else
+            git push origin main
+          fi
