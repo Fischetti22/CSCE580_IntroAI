@@ -1,0 +1,48 @@
+name: Sync from upstream (PR bootstrap)
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "0 7 * * *"   # daily 07:00 UTC
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync_pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Add upstream and fetch
+        run: |
+          git remote add upstream https://github.com/biplav-s/course-ai-f25.git || true
+          git fetch upstream
+
+      - name: Create sync branch from upstream
+        run: |
+          git checkout -B sync/upstream
+          git reset --hard upstream/main    # professor's default is 'main'
+
+      - name: Push sync branch
+        run: |
+          git push -f origin sync/upstream
+
+      - name: Open or update PR
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: sync/upstream
+          title: "Sync from upstream"
+          body: "Automated PR to mirror biplav-s/course-ai-f25:main."
+          commit-message: "chore: sync from upstream"
+          labels: sync, automated
+          signoff: false
+          delete-branch: false
