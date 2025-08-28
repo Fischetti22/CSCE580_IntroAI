@@ -1,0 +1,36 @@
+# --- Load .env ---
+load_dotenv()
+api_key = os.getenv("OPENAI_API_KEY")
+
+if not api_key:
+    raise ValueError("OPENAI_API_KEY not found in .env file")
+
+# --- Setup OpenAI client ---
+client = OpenAI(api_key=api_key)
+
+# --- Load your guesses CSV ---
+csv_path = "guesses/guesses_log.csv"
+df = pd.read_csv(csv_path)
+
+# Convert dataframe to CSV string (or summarize if big)
+csv_text = df.to_csv(index=False)
+
+# --- Ask ChatGPT about the file ---
+prompt = f"""
+Here is the guesses_log.csv file:
+
+{csv_text}
+
+Please tell me:
+1. Using your most educated guess and the csv file please give me the best 4 digits to play. We have 3 tries per each digit, before I was my tries I want you to give a crack at it. Keep your response minimal as all i want are 3 different sets of 4 digits Plan A, B, and C.
+"""
+
+response = client.chat.completions.create(
+    model="gpt-4o-mini",   # small + fast, can use gpt-4.1 for deeper reasoning
+    messages=[
+        {"role": "system", "content": "You are a helpful data analyst."},
+        {"role": "user", "content": prompt}
+    ]
+)
+
+print(response.choices[0].message.content)
