@@ -4,7 +4,7 @@ An intelligent passcode guessing game that combines AI analysis with statistical
 
 ## 🎮 How It Works
 
-The game challenges you to crack a 4-digit passcode (currently set to `3246`) with only 3 attempts per digit. What makes this unique is the AI assistant that analyzes your previous attempts and provides strategic recommendations.
+The game challenges you to crack a 4-digit passcode (currently set to `6969` or 'random') with only 3 attempts per digit. What makes this unique is the AI assistant that analyzes your previous attempts and provides strategic recommendations.
 
 ### Game Features
 

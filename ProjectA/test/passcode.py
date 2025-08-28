@@ -118,10 +118,10 @@ print_plans()
 print()
 
 # Generate 4 random digits (0–9)
-digit_1 = 3 #random.randint(0, 9)
-digit_2 = 2  #random.randint(0, 9)
-digit_3 = 4  #random.randint(0, 9)
-digit_4 = 6  #random.randint(0, 9)
+digit_1 = 6 #random.randint(0, 9)
+digit_2 = 9  #random.randint(0, 9)
+digit_3 = 6  #random.randint(0, 9)
+digit_4 = 9  #random.randint(0, 9)
 
 guesses = []
 correct_guesses = []
