@@ -1,0 +1,9 @@
+Category,Good Keywords ,Bad Keywords 
+Programming,"python, java, c++, sql, r, javascript, scala","basic computer skills, ms word, excel only"
+Data Science,"machine learning, deep learning, nlp, ai, pandas, tensorflow, pytorch, statistics","guessing, approximate knowledge, some experience"
+Cloud/DevOps,"aws, azure, gcp, docker, kubernetes, ci/cd, linux","familiar with cloud, tinkered, beginner"
+Tools,"git, jira, confluence, tableau, powerbi, spark","microsoft paint, office only"
+Soft Skills,"leadership, teamwork, communication, adaptability, problem solving","hardworking, go-getter, fast learner (too vague)"
+Certifications,"aws certified, gcp certified, pmp, cfa, scrum master","certificate of participation, attended workshop"
+Experience Level,"senior, lead, manager, 5+ years, expert","entry-level, beginner, novice (unless true)"
+Impact Words,"delivered, achieved, designed, implemented, optimized","helped with, tried, attempted, exposed to"

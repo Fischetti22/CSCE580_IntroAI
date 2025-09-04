@@ -1,0 +1,49 @@
+filename,label,text
+/home/droski/Desktop/School/Fall25/AI/resume_ai/Pedro_Fischetti_Resume.pdf,resume_ai,"Pedro Fischetti
+Camden, SC 29020 | (754) 214-1434 | # PedroF@email.sc.edu | (cid:239) linkedin.com/in/pedro-fischetti | §
+github.com/Fischetti22
+Education
+University of South Carolina Columbia, SC
+Bachelor of Science in Computer Engineering, GPA: 3.20 Dec 2025
+• Relevant Coursework: Data Structures & Algorithms, Embedded Systems, Signal Processing, Digital Logic Design
+USCG Federal Maritime Boarding Officer School North Charleston, SC
+Secret Security Clearance (Active until 2027) Dec 2020
+Related & Professional Experience
+United States Coast Guard Various Locations
+Machinery Technician 2nd Class (Active Duty) Feb 2016 – Dec 2023
+• Sustained mission-critical engineering and electronic systems aboard cutters, ensuring operational reliability
+• Managed the safe handling and transfer of hazardous materials during 2018 dry-dock availability (8,000 gallons fuel oil,
+330 gallons lube oil, 660 gallons coolant)
+• Diagnosed and resolved critical equipment failures (heat exchangers, pumps, regulators), ensuring mission continuity
+• Collaborated on navigation aid maintenance across Chesapeake and Delaware Bay, supporting vital marine transports
+• Demonstrated technical proficiency beyond rank, overcoming shipboard discrepancies and ensuring seamless operations
+Best Buy Coral Springs, FL
+Connections Manager Aug 2013 – Dec 2015
+• Led 70+ member team through major industry transition, consistently exceeding $100K daily sales targets
+• Developed comprehensive training programs that improved team performance and customer satisfaction
+Project Experience
+ArduinoGotchi - Tamagotchi Emulator | C++, Arduino UNO, SSD1306 OLED 2024
+• Developed full P1 emulator under strict memory constraints (32KB Flash, 2KB RAM)
+• Implemented custom Hardware Abstraction Layer and optimized LCD rendering with bit manipulation
+• Integrated Java-based ROM conversion utility for cross-platform compatibility
+IoT Multi-Display Task Manager | ESP32, WiFi, HTTPS, JSON APIs 2024
+• Engineered an IoT system managing three SSD1306 displays via I2C multiplexers
+• Implemented secure HTTPS API integration for real-time task synchronization and dynamic UI
+Home Server & IoT Hub | Raspberry Pi, Docker 2024
+• Built local server with Home Assistant, live notes, vegan cookbook, and educational game containers
+3D Printed Desktop Buddy | Fusion 360, Bambu Studio 2024
+• Designed and printed custom shells integrating soldered multi-display modules for dynamic interaction
+Healthcare Automation Script | Bash, CSV Parsing 2024
+• Automated staff competency tracking and compliance reporting, reducing manual workflows
+Technical Skills
+Languages: C++, Python, JavaScript/Node.js, MATLAB, Java, Bash
+Embedded Systems: Arduino (UNO, ESP32, Nano, Mega), I2C/SPI/UART, memory optimization
+Tools: Arduino IDE/CLI, Git, NVM, Zsh, Fusion 360, Bambu Studio, LTSpice, Docker
+Frameworks: Adafruit (SSD1306, GFX, BusIO), U8g2, WiFiManager, ArduinoJson, Google Test
+Specialties: Digital logic design, signal processing, IoT development, 3D design, real-time systems
+Languages: Portuguese (Native), Spanish (Conversational), English (Fluent)
+Leadership Experience
+USCG Law Enforcement Operations
+Certified Instructor & Firearms Coach | Maritime Enforcement Leadership 2016 – 2023
+• Directed complex maritime enforcement operations, recognized with multiple awards for operational excellence
+• Enhanced team operational readiness through advanced training program development"
