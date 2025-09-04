@@ -1,0 +1,21 @@
+filename,label,degree_level,degree_field,good_hits,bad_hits,quality_score,good_terms_found,bad_terms_found,word_count,char_count,Programming_good,Programming_bad,Data Science_good,Data Science_bad,Cloud/DevOps_good,Cloud/DevOps_bad,Tools_good,Tools_bad,Soft Skills_good,Soft Skills_bad,Certifications_good,Certifications_bad,Experience Level_good,Experience Level_bad,Impact Words_good,Impact Words_bad
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Resume_Patrick_Bailey.pdf,general,unknown,,2,0,2,"java, linux",,102,707,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Trent Braley Resume 2025.pdf,general,unknown,,4,0,4,"java, javascript, linux, python",,123,798,3,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Eli_Hatcher_resume.pdf,general,unknown,,5,0,5,"git, java, linux, python, pytorch",,100,731,2,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/James Tabakian Resume 2025 (1).pdf,general,unknown,,6,0,6,"implemented, java, javascript, linux, python, sql",,163,1230,4,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/DJ Ravenell’s Resume.pdf,general,unknown,,1,0,1,java,,93,610,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/AidanVanVoorhis_2025_Resume.pdf,general,unknown,,4,0,4,"java, javascript, python, sql",,100,688,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Nathan Nicodin Resume.pdf,general,unknown,,2,0,2,"java, linux",,37,308,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Luke Peter Resume.pdf,general,unknown,,1,0,1,java,,111,729,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/FINAL Resume- IT Intership.pdf,general,unknown,,5,0,5,"git, java, javascript, sql, tableau",,129,994,3,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Steven_Dindl-Resume_2025.pdf,general,bachelors,,10,0,10,"adaptability, confluence, git, java, jira, pandas, python, pytorch, scala, sql",,41,1363,4,0,2,0,0,0,3,0,1,0,0,0,0,0,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/TylerKorth Resume AI Class.pdf,general,bachelors,,4,0,4,"java, javascript, linux, python",,75,617,3,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Cody Miller - Resume.pdf,general,unknown,,3,0,3,"java, javascript, python",,93,712,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/ResumeEvanFunderburg.pdf,general,bachelors,,2,0,2,"java, python",,123,819,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Pedro_Fischetti_Resume 3.pdf,general,unknown,,6,0,6,"docker, git, java, javascript, leadership, python",,153,1133,3,0,0,0,1,0,1,0,1,0,0,0,1,0,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Tej_resume.pdf,general,unknown,,10,0,10,"docker, git, implemented, java, javascript, jira, linux, python, sql, tableau",,262,1982,4,0,0,0,2,0,3,0,0,0,0,0,0,0,1,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Resume_ALim.pdf,general,unknown,,5,1,4,"git, java, jira, python, sql",beginner,129,979,3,0,0,0,0,1,2,0,0,0,0,0,0,1,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/SaraMuthuselvam-Resume.pdf,general,unknown,,7,0,7,"implemented, java, linux, python, pytorch, sql, tensorflow",,119,886,3,0,2,0,1,0,0,0,0,0,0,0,0,0,1,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/David_Dinh_Resume_2026WOGPA.pdf,general,bachelors,,9,0,9,"aws, docker, git, java, javascript, leadership, linux, python, sql",,181,1515,4,0,0,0,3,0,1,0,1,0,0,0,1,0,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Ardoine_Docteur_Resume.pdf,general,bachelors,,4,0,4,"java, javascript, linux, python",,289,1917,3,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Dustin_McDowell_Resume.pdf,general,masters,,3,0,3,"git, javascript, python",,183,1379,3,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
