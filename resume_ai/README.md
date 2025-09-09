@@ -17,11 +17,9 @@ This project processes PDF resumes to extract meaningful insights through:
 resume_ai/
 ├── README.md                          # This file
 ├── keywords_enhanced.py               # Enhanced analysis pipeline (authoritative)
-├── keywords.py                        # Legacy wrapper → forwards to enhanced
 ├── resume_classifier_enhanced.py      # Enhanced classification pipeline
 ├── resume_classifier.py               # Legacy wrapper → forwards to enhanced
 ├── resume_keywords.csv                # Curated CS/CE keyword taxonomy
-├── Pedro_Fischetti_Resume.pdf         # Sample resume file
 ├── StudentResumes/                    # Collection of student resumes
 │   ├── Aashish_Jayapuram_Resume_Revised.pdf
 │   ├── AidanVanVoorhis_2025_Resume.pdf
@@ -44,7 +42,6 @@ resume_ai/
 - Scores resumes with curated CS/CE keyword taxonomy (good/bad)
 - Generates comprehensive enhanced reports
 
-Legacy entry point `keywords.py` now forwards to `keywords_enhanced.py`.
 
 ### 2. **Resume Classification (Enhanced)** (`resume_classifier_enhanced.py`)
 - Multiple models, cross‑validation, feature engineering
@@ -153,20 +150,29 @@ Based on the current dataset:
 # Run enhanced keyword analysis (writes resume_keywords.csv if missing)
 python keywords_enhanced.py --root StudentResumes --outdir out --keywords resume_keywords.csv
 
-# Or via legacy wrapper
-python keywords.py --root StudentResumes --outdir out --keywords resume_keywords.csv
-
 # Run enhanced classification on the enhanced texts
 python resume_classifier_enhanced.py --resume-data out/resume_texts_enhanced.csv --output-dir classification_results
 
-# Or via legacy wrapper
-python resume_classifier.py --resume-data out/resume_texts_enhanced.csv --output-dir classification_results
+# (Optional) If the legacy wrapper exists, it forwards to the enhanced script
+# python resume_classifier.py --resume-data out/resume_texts_enhanced.csv --output-dir classification_results
 ```
 
 ### Customization:
 - Update `resume_keywords.csv` to modify keyword matching criteria
 - Adjust similarity thresholds in the analysis scripts
 - Add new resume categories for classification
+
+### Keyword taxonomy CSV (resume_keywords.csv)
+A simple CSV with three columns: Category, Good_Keywords, Bad_Keywords. Terms are comma-separated within each cell. Example:
+
+```csv path=null start=null
+Category,Good_Keywords,Bad_Keywords
+Programming,"python, java, c, c++, c#, javascript, typescript, go, rust, kotlin, swift, matlab, r","basic computer skills, microsoft office only, beginner"
+Data Science,"machine learning, deep learning, nlp, ai, pandas, numpy, scikit-learn, tensorflow, pytorch, statistics, data mining, computer vision","some experience with data, basic statistics"
+Cloud/DevOps,"aws, azure, gcp, docker, kubernetes, ci/cd, terraform, ansible, jenkins, linux, bash","familiar with cloud, tinkered with aws"
+Computer Science Core,"data structures, algorithms, operating systems, computer architecture, discrete mathematics, databases, networking, software engineering, object-oriented programming, compilers","basic computer skills"
+Computer Engineering Core,"embedded systems, digital logic, verilog, vhdl, fpga, microcontroller, microcontrollers, microprocessor, systemverilog, pcb design, circuits, hardware design, signal processing, control systems","breadboard only, simple circuits only"
+```
 
 ## 📝 Notes
 
