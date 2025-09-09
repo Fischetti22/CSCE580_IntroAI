@@ -1,0 +1,19 @@
+Accuracy: 1.000
+Precision: 1.000
+Recall: 1.000
+F1-score: 1.000
+ROC AUC: 1.000
+Confusion Matrix:
+[[4 0]
+ [0 4]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0      1.000     1.000     1.000         4
+           1      1.000     1.000     1.000         4
+
+    accuracy                          1.000         8
+   macro avg      1.000     1.000     1.000         8
+weighted avg      1.000     1.000     1.000         8
+

@@ -34,5 +34,6 @@ plt.xlabel("Height (cm)")
 plt.ylabel("Weight (kg)")
 plt.legend()
 plt.title("Linear Regression: Weight vs Height")
-plt.show()
+plt.savefig("regression.png", dpi=150, bbox_inches="tight")
+print("Saved plot to regression.png")
 

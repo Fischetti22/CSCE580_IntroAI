@@ -1,0 +1,5 @@
+Intercept: -85.065
+Slope: 0.935
+R^2 (test): -0.153
+MAE (test): 34.770 kg
+RMSE (test): 79.057 kg
