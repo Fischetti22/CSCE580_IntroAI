@@ -1,0 +1,21 @@
+filename,label,good_hits,bad_hits,good_terms_found,bad_terms_found,KMeans_Cluster,DBSCAN_Cluster
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Resume_Patrick_Bailey.pdf,StudentResumes,3,0,"designed, java, linux",,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Trent Braley Resume 2025.pdf,StudentResumes,13,0,"designed, java, javascript, lead, linux, manager, optimized, python",,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Eli_Hatcher_resume.pdf,StudentResumes,18,0,"achieved, ai, designed, git, java, leadership, linux, python, pytorch, r, spark",,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/James Tabakian Resume 2025 (1).pdf,StudentResumes,11,0,"delivered, designed, implemented, java, javascript, linux, python, senior, sql",,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/DJ Ravenell’s Resume.pdf,StudentResumes,3,0,"java, javascript, linux",,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/AidanVanVoorhis_2025_Resume.pdf,StudentResumes,11,0,"java, javascript, leadership, manager, python, r, sql, statistics",,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Nathan Nicodin Resume.pdf,StudentResumes,5,0,"communication, java, linux, manager, sql",,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Luke Peter Resume.pdf,StudentResumes,2,0,"java, linux",,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/FINAL Resume- IT Intership.pdf,StudentResumes,13,0,"designed, git, java, javascript, manager, optimized, python, r, sql, tableau",,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Steven_Dindl-Resume_2025.pdf,StudentResumes,14,0,"adaptability, confluence, git, java, jira, pandas, python, pytorch, r, scala, sql",,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/TylerKorth Resume AI Class.pdf,StudentResumes,11,0,"ai, communication, designed, implemented, java, javascript, linux, python",,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Cody Miller - Resume.pdf,StudentResumes,8,1,"java, javascript, machine learning, python, r",exposed to,0,-1
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/ResumeEvanFunderburg.pdf,StudentResumes,5,0,"java, linux, python, r, statistics",,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Pedro_Fischetti_Resume 3.pdf,StudentResumes,15,0,"designed, docker, git, implemented, java, javascript, leadership, manager, optimized, python",,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Tej_resume.pdf,StudentResumes,28,0,"ai, azure, ci/cd, communication, designed, docker, git, implemented, java, javascript, jira, linux, machine learning, python, sql, tableau",,0,-1
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Resume_ALim.pdf,StudentResumes,7,1,"git, java, jira, linux, python, sql",beginner,0,-1
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/SaraMuthuselvam-Resume.pdf,StudentResumes,20,0,"ai, aws, communication, designed, implemented, java, linux, manager, python, pytorch, r, sql, tensorflow",,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/David_Dinh_Resume_2026WOGPA.pdf,StudentResumes,19,0,"ai, aws, azure, ci/cd, docker, git, java, javascript, leadership, linux, machine learning, python, senior, sql",,0,0
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Ardoine_Docteur_Resume.pdf,StudentResumes,25,2,"azure, docker, git, java, javascript, leadership, linux, machine learning, manager, problem solving, python, r, senior, sql, statistics",guessing,1,-1
+/home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Dustin_McDowell_Resume.pdf,StudentResumes,8,0,"git, javascript, linux, python, sql",,0,0

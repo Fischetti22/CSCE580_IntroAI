@@ -1,0 +1,32 @@
+Resume Analysis Report
+======================
+
+Mode: clustering
+
+Chosen k (clusters): 5
+
+Cluster sizes:
+{
+  "0": 2,
+  "1": 5,
+  "2": 3,
+  "3": 7,
+  "4": 3
+}
+
+Top terms per cluster:
+- Cluster 0: stage, palmetto, resolving software, software hardware, sc, scholar, hardware, digital, electrical, team members, network issues, resolving
+- Cluster 1: columbia sc, sc, columbia, present, css, tools, excel, networks, git, mysql, projects, technologies git
+- Cluster 2: students, honors, undergraduate, club, graduation 2027, topics, language, honors college, teaching, weekly, using, writing
+- Cluster 3: 2025, data, api, using, 2023, ensuring, management, language, leadership, js, aug, development
+- Cluster 4: day, 2024 present, cell email, cell, logistics, coach, equipment, uofsc, present, 2024, feb, email
+
+Example files per cluster (up to 5):
+- Cluster 0: /home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/DJ Ravenell’s Resume.pdf, /home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Luke Peter Resume.pdf
+- Cluster 1: /home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/James Tabakian Resume 2025 (1).pdf, /home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/FINAL Resume- IT Intership.pdf, /home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Steven_Dindl-Resume_2025.pdf, /home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/TylerKorth Resume AI Class.pdf, /home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Resume_ALim.pdf
+- Cluster 2: /home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Eli_Hatcher_resume.pdf, /home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Cody Miller - Resume.pdf, /home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/ResumeEvanFunderburg.pdf
+- Cluster 3: /home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/AidanVanVoorhis_2025_Resume.pdf, /home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Pedro_Fischetti_Resume 3.pdf, /home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Tej_resume.pdf, /home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/SaraMuthuselvam-Resume.pdf, /home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/David_Dinh_Resume_2026WOGPA.pdf
+- Cluster 4: /home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Resume_Patrick_Bailey.pdf, /home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Trent Braley Resume 2025.pdf, /home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Nathan Nicodin Resume.pdf
+
+Saved pipeline → out/tfidf_kmeans_pipeline.joblib
+Saved assignments → out/cluster_assignments.csv

@@ -1,0 +1,53 @@
+Employer-Attention Ranking (Skills/Experience Keywords)
+=====================================================
+
+- /home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Pedro_Fischetti_Resume.pdf
+  score=58.307 | core_langs=c, java, javascript, matlab, python, sql, swift, typescript | frameworks=flask, node, numpy, pandas, pytorch, rest, tensorflow
+  cloud/devops=azure, bash, ci/cd, docker, github actions, linux | db=sqlite | verbs=automated, built, deployed, engineered, implemented, improved, integrated, led, maintained, optimized, reduced
+  quantified_claims=2 | top_tech_terms=rest, sqlite, numpy, pandas, flask, bash, docker, linux, swift, tensorflow, pytorch, matlab
+
+- /home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/David_Dinh_Resume_2026WOGPA.pdf
+  score=55.134 | core_langs=c, java, javascript, python, sql, swift, typescript | frameworks=.net, angular, flask, next.js, node, react, rest
+  cloud/devops=aws, azure, bash, ci/cd, docker, linux, shell | db=mongodb, postgresql, sqlite | verbs=built, collaborated, created, developed, integrated, led
+  quantified_claims=1 | top_tech_terms=typescript, angular, mongodb, c, sqlite, aws, next.js, swift, flask, rest, postgresql, net
+
+- /home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Tej_resume.pdf
+  score=42.481 | core_langs=c, java, javascript, kotlin, python, sql | frameworks=django, flask, react, rest
+  cloud/devops=apache, azure, ci/cd, docker, linux | db=mysql | verbs=collaborated, deployed, designed, engineered, implemented, led, managed
+  quantified_claims=1 | top_tech_terms=django, apache, mysql, react, flask, javascript, docker, python, linux, kotlin, rest, ci/cd
+
+- /home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Dustin_McDowell_Resume.pdf
+  score=39.435 | core_langs=c, go, javascript, python, sql, typescript | frameworks=.net, express, node, react
+  cloud/devops=bash, linux | db=mysql, postgresql, sql server | verbs=created, developed, increased, integrated, maintained, managed
+  quantified_claims=1 | top_tech_terms=c, sql, go, postgresql, bash, mysql, typescript, react, linux, javascript, python
+
+- /home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Edwin_Wood.pdf
+  score=34.47 | core_langs=c, java, sql | frameworks=.net, next.js, node, react, rest
+  cloud/devops=aws, azure, ci/cd, github actions | db=postgres, postgresql | verbs=architected, built, delivered, developed, implemented, integrated, reduced
+  quantified_claims=0 | top_tech_terms=net, ci/cd, azure, next.js, postgresql, react, c, java
+
+- /home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/James Tabakian Resume 2025 (1).pdf
+  score=31.938 | core_langs=c, java, javascript, matlab, python, sql | frameworks=react
+  cloud/devops=linux | db= | verbs=created, delivered, designed, developed, implemented, improved, maintained
+  quantified_claims=4 | top_tech_terms=react, c, sql, matlab, linux, javascript, python, java
+
+- /home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/SaraMuthuselvam-Resume.pdf
+  score=31.635 | core_langs=java, python, r, sql | frameworks=pytorch, react, sklearn, tensorflow
+  cloud/devops=aws, linux | db= | verbs=created, designed, implemented, led, maintained, managed
+  quantified_claims=0 | top_tech_terms=linux, sklearn, aws, tensorflow, pytorch, python, react, r, sql, java
+
+- /home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/Ardoine_Docteur_Resume.pdf
+  score=31.386 | core_langs=c, java, javascript, python, r, sql, typescript | frameworks=react, spring
+  cloud/devops=azure, docker, linux | db= | verbs=built, created, increased, maintained, managed
+  quantified_claims=0 | top_tech_terms=spring, javascript, c, linux, docker, typescript, python, azure, java, r, sql
+
+- /home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/TylerKorth Resume AI Class.pdf
+  score=29.068 | core_langs=c, java, javascript, python | frameworks=
+  cloud/devops=linux | db=mongodb, mysql | verbs=automated, collaborated, created, designed, developed, implemented, integrated, led, maintained, managed
+  quantified_claims=0 | top_tech_terms=mysql, javascript, java, mongodb, c, linux, python
+
+- /home/droski/Desktop/School/Fall25/AI/resume_ai/StudentResumes/FINAL Resume- IT Intership.pdf
+  score=28.844 | core_langs=c, java, javascript, python, r, sql | frameworks=node
+  cloud/devops= | db=mongodb | verbs=collaborated, created, designed, led, maintained, managed, optimized, tested
+  quantified_claims=0 | top_tech_terms=mongodb, javascript, java, r, sql, python, c
+
