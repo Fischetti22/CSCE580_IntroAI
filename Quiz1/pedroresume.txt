@@ -1,0 +1,60 @@
+                                                                                    
+                            Pedro       Fischetti                                   
+                                                                                    
+        Camden, SC 29020 | (754) 214-1434 | # PedroF@email.sc.edu | (cid:239) linkedin.com/in/pedro-fischetti | §
+                                   github.com/Fischetti22                           
+                                                                                    
+                                                                                    
+    Education                                                                       
+    University of South Carolina                                       Columbia, SC 
+    Bachelor of Science in Computer Engineering, GPA: 3.50                Dec 2025  
+    USCG Federal Maritime Boarding Officer School                North Charleston, SC
+                                                                                    
+    Secret Security Clearance (Active until 2027)                         Dec 2020  
+    Related & Professional Experience                                               
+    United States Coast Guard                                       Various Locations
+    Machinery Technician 2nd Class (Active Duty)                  Feb 2016 – Dec 2023
+                                                                                    
+      • Maintained mission-critical engineering/electronic systems aboard cutters; diagnosed and resolved failures to ensure
+       mission continuity.                                                          
+      • Led hazardous-materials handling during dry-dock (8k gal fuel oil, 330 gal lube oil, 660 gal coolant) with zero incidents.
+      • Certified Instructor & Firearms Coach; improved team readiness via advanced training programs.
+    Best Buy                                                        Coral Springs, FL
+    Connections Manager                                          Aug 2013 – Dec 2015
+      • Led 70+ member team through major industry transition, consistently exceeding $100K daily sales targets; implemented
+       standardized onboarding that improved ramp-up time.                          
+                                                                                    
+    Project Experience                                                              
+    NFL ELO Predictor — GitHub | Streamlit, Pandas, NumPy, Requests, lxml    2025   
+      • Built an interactive Streamlit app that ranks weekly ”safest picks” for a suicide pool by blending ELO ratings with
+       team statistics.                                                             
+      • Ingested ESPN schedules with PFR fallback (pandas.read html + lxml); automated weekly updates.
+                                                                                    
+    IoT Multi-Display Task Manager | ESP32, WiFi, HTTPS, JSON APIs           2024   
+      • Engineered an ESP32 IoT system with 3 SSD1306 displays via I2C multiplexers; secure HTTPS REST (JSON) and CI
+       checks (GitHub Actions).                                                     
+    Home Server & IoT Hub | Raspberry Pi, Docker, GitHub Actions             2024   
+      • Built Raspberry Pi (Linux) home server and IoT hub; deployed 4+ Docker containers (Home Assistant, live notes,
+       vegan cookbook, educational game); added GitHub Actions workflow to lint/test container definitions; integrated
+       Azure-hosted n8n workflows leveraging AI chat bots to automate notifications and task routing.
+                                                                                    
+    Smart Lights Control GUI | Flask, REST, SQLite                           2024   
+      • Built a Flask-based web GUI to control LIFX lights via REST; secured token via environment variable and logged
+       actions to SQLite for auditability.                                          
+    ArduinoGotchi - Tamagotchi Emulator | C/C++, Arduino UNO, SSD1306        2024   
+      • Implemented a P1 Tamagotchi emulator under 32KB Flash/2KB RAM with a custom HAL and optimized LCD
+       bit-manipulation rendering.                                                  
+                                                                                    
+    Healthcare Automation Script | Bash, ODS(cid:25)HTML                     2024   
+      • Automated competency tracking/reporting by parsing ODS inputs and generating HTML outputs; reduced manual
+       processing.                                                                  
+                                                                                    
+    Technical Skills                                                                
+     Languages: Python, C, C++, Java, JavaScript/Node.js,Typescript, Swift, SQL, MATLAB, Bash, HTML, CSS
+     Embedded Systems: Arduino (UNO, ESP32, Nano, Mega), I2C/SPI/UART/PWM/GPIO, memory optimization
+     Tools: Arduino IDE/CLI, Git, CI/CD (GitHub Actions), NVM, Zsh, Fusion 360, Bambu Studio, LTSpice,
+     Docker/Compose, Linux, SQLite, Azure, N8N, ngrok                               
+     Frameworks/Libraries: Flask, Streamlit, REST, Glitch, Pandas, NumPy, PyTorch, Tensorflow, Sklean, Whisper,
+     MoviePy, Adafruit (SSD1306, GFX, BusIO), U8g2, WiFiManager, ArduinoJson, Google Test
+     Specialties: Data scraping (pandas.read html/lxml), web APIs, IoT, real-time, digital logic
+     Languages: Portuguese (Native), Spanish (Conversational), English (Fluent)     
