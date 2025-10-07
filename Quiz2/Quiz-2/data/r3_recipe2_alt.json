@@ -1,0 +1,23 @@
+{
+  "recipe_name": "Rhubarb Crumble (Vegan)",
+  "data_provenance": {"source_url": "https://www.instructables.com/Rhubarb-Crumble-Vegan/", "retrieved_at": "2025-10-07T20:55:59Z"},
+  "macronutrients": {"calories": null, "protein_g": null, "fat_g": null, "carbs_g": null},
+  "ingredients": [
+    {"item":"rhubarb","quantity":500,"unit":"g","notes":"about 5 sticks; ~2.5 cups"},
+    {"item":"sugar","quantity":125,"unit":"g","notes":"about 1/2 cup"},
+    {"item":"plain flour","quantity":250,"unit":"g","notes":"about 1 cup"},
+    {"item":"vegan butter or margarine","quantity":100,"unit":"g","notes":"just under 1/2 cup"}
+  ],
+  "instructions": [
+    {"step_no":1,"action":"peel","parameters":"remove outer skin from rhubarb","duration":null,"temperature":null},
+    {"step_no":2,"action":"chop","parameters":"chop rhubarb sticks into chunks","duration":null,"temperature":null},
+    {"step_no":3,"action":"place","parameters":"place rhubarb chunks into an oven-proof dish","duration":null,"temperature":null},
+    {"step_no":4,"action":"sprinkle","parameters":"sprinkle 125 g sugar over rhubarb","duration":null,"temperature":null},
+    {"step_no":5,"action":"add","parameters":"add 250 g plain flour and 100 g vegan margarine or butter into blender","duration":null,"temperature":null},
+    {"step_no":6,"action":"blend","parameters":"blend flour and butter to form crumble","duration":"about 5 minutes","temperature":null},
+    {"step_no":7,"action":"pour","parameters":"pour crumble over rhubarb in dish","duration":null,"temperature":null},
+    {"step_no":8,"action":"set_oven","parameters":"set oven to 180 C / 350 F","duration":null,"temperature":"180 C / 350 F"},
+    {"step_no":9,"action":"bake","parameters":"bake until golden brown","duration":"40 minutes","temperature":"180 C / 350 F"},
+    {"step_no":10,"action":"serve","parameters":"serve warm; optional custard or ice cream","duration":null,"temperature":null}
+  ]
+}

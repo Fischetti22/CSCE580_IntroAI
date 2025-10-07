@@ -1,0 +1,6 @@
+[
+  { "item": "rhubarb", "quantity": 500, "unit": "g", "notes": "about 5 sticks; ~2.5 cups" },
+  { "item": "sugar", "quantity": 125, "unit": "g", "notes": "about 1/2 cup" },
+  { "item": "plain flour", "quantity": 250, "unit": "g", "notes": "about 1 cup" },
+  { "item": "vegan butter or margarine", "quantity": 100, "unit": "g", "notes": "just under 1/2 cup" }
+]

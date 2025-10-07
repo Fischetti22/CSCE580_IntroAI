@@ -1,0 +1,13 @@
+[
+  { "item": "Hungarian sweet paprika", "quantity": 4, "unit": "tbsp", "notes": null },
+  { "item": "onion powder", "quantity": 2, "unit": "tbsp", "notes": null },
+  { "item": "salt", "quantity": 4, "unit": "tsp", "notes": "pink Himalayan sea salt noted" },
+  { "item": "ground black pepper", "quantity": 1, "unit": "tsp", "notes": null },
+  { "item": "ground white pepper", "quantity": 1, "unit": "tsp", "notes": null },
+  { "item": "dried thyme leaves", "quantity": 0.5, "unit": "tsp", "notes": null },
+  { "item": "dried basil leaves", "quantity": 0.5, "unit": "tsp", "notes": null },
+  { "item": "dried oregano leaves", "quantity": 0.5, "unit": "tsp", "notes": null },
+  { "item": "firm tofu", "quantity": 3, "unit": "block", "notes": "slice to 1/2 inch; pat dry" },
+  { "item": "butter", "quantity": 1.5, "unit": "tbsp", "notes": null },
+  { "item": "fresh basil leaves", "quantity": null, "unit": null, "notes": "handful; garnish" }
+]

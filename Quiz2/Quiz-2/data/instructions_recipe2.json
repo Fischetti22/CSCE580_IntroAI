@@ -1,0 +1,12 @@
+[
+  { "step_no": 1,  "action": "peel",      "parameters": "remove outer skin from rhubarb", "duration": null, "temperature": null },
+  { "step_no": 2,  "action": "chop",      "parameters": "chop rhubarb sticks into chunks", "duration": null, "temperature": null },
+  { "step_no": 3,  "action": "place",     "parameters": "place rhubarb chunks into an oven-proof dish", "duration": null, "temperature": null },
+  { "step_no": 4,  "action": "sprinkle",  "parameters": "sprinkle 125 g sugar over rhubarb", "duration": null, "temperature": null },
+  { "step_no": 5,  "action": "add",       "parameters": "add 250 g plain flour and 100 g vegan margarine or butter into blender", "duration": null, "temperature": null },
+  { "step_no": 6,  "action": "blend",     "parameters": "blend flour and butter to form crumble", "duration": "about 5 minutes", "temperature": null },
+  { "step_no": 7,  "action": "pour",      "parameters": "pour crumble over rhubarb in dish", "duration": null, "temperature": null },
+  { "step_no": 8,  "action": "set_oven",  "parameters": "set oven to 180 C / 350 F", "duration": null, "temperature": "180 C / 350 F" },
+  { "step_no": 9,  "action": "bake",      "parameters": "bake until crumble is golden brown", "duration": "40 minutes", "temperature": "180 C / 350 F" },
+  { "step_no": 10, "action": "serve",     "parameters": "serve warm; optional custard or ice cream", "duration": null, "temperature": null }
+]

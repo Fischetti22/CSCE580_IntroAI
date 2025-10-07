@@ -1,0 +1,25 @@
+# --- ALT-1: Schema-first (single prompt) ---
+You are a JSON validator. Output ONLY valid JSON (no markdown fences, no commentary).
+First, construct the empty R3 JSON skeleton with all required keys.
+Then fill values from TEXT exactly. If information is missing, set fields to null.
+Ensure each instruction is ONE atomic action.
+
+R3 schema (keys must exist):
+{
+  "recipe_name": "string",
+  "data_provenance": {"source_url": "string", "retrieved_at": "ISO8601 string"},
+  "macronutrients": {"calories": number|null, "protein_g": number|null, "fat_g": number|null, "carbs_g": number|null},
+  "ingredients": [{"item":"string","quantity":number|null,"unit":"string|null","notes":"string|null"}],
+  "instructions": [{"step_no":number,"action":"string","parameters":"string|null","duration":"string|null","temperature":"string|null"}]
+}
+
+TEXT:
+{{RECIPE_TEXT}}
+
+# --- ALT-2: Two-pass repair (use when JSON fails) ---
+Step A (draft): Convert TEXT into the R3 JSON as above. Return ONLY JSON.
+Step B (repair): If the JSON fails validation (missing keys, null where required, non-atomic steps), fix it.
+Return ONLY repaired JSON. Never invent ingredients not in TEXT.
+
+TEXT:
+{{RECIPE_TEXT}}

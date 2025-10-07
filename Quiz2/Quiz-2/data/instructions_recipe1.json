@@ -1,0 +1,19 @@
+[
+  { "step_no": 1,  "action": "measure", "parameters": "measure listed spices for blackening rub", "duration": null, "temperature": null },
+  { "step_no": 2,  "action": "mix",     "parameters": "mix measured spices to make blackening rub", "duration": null, "temperature": null },
+  { "step_no": 3,  "action": "melt",    "parameters": "butter in large nonstick skillet", "duration": null, "temperature": "low heat" },
+  { "step_no": 4,  "action": "slice",   "parameters": "tofu to 1/2 inch thickness", "duration": null, "temperature": null },
+  { "step_no": 5,  "action": "pat",     "parameters": "tofu dry with paper towel", "duration": null, "temperature": null },
+  { "step_no": 6,  "action": "sprinkle", "parameters": "blackening rub on one side of tofu slices", "duration": null, "temperature": null },
+  { "step_no": 7,  "action": "increase_heat", "parameters": "increase burner to medium", "duration": null, "temperature": "medium heat" },
+  { "step_no": 8,  "action": "place",   "parameters": "tofu spice-side down in skillet", "duration": null, "temperature": "medium heat" },
+  { "step_no": 9,  "action": "sprinkle", "parameters": "blackening rub on top side of tofu", "duration": null, "temperature": null },
+  { "step_no": 10, "action": "cook",    "parameters": "cook first side of tofu", "duration": "several minutes", "temperature": "medium heat" },
+  { "step_no": 11, "action": "flip",    "parameters": "flip tofu slices", "duration": null, "temperature": null },
+  { "step_no": 12, "action": "cook",    "parameters": "cook second side of tofu", "duration": "several minutes", "temperature": "medium heat" },
+  { "step_no": 13, "action": "add",     "parameters": "fresh basil leaves to pan to wilt slightly", "duration": null, "temperature": null },
+  { "step_no": 14, "action": "serve",   "parameters": "serve hot", "duration": null, "temperature": null },
+  { "step_no": 15, "action": "slice",   "parameters": "optional: slice eggplant or potato to ~1/2 inch", "duration": null, "temperature": null },
+  { "step_no": 16, "action": "blacken", "parameters": "optional: blacken eggplant or potato using same method", "duration": null, "temperature": "medium heat" },
+  { "step_no": 17, "action": "wilt",    "parameters": "optional: wilt spinach in skillet after tofu", "duration": null, "temperature": null }
+]

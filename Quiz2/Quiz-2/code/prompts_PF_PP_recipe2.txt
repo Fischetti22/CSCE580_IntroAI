@@ -1,0 +1,126 @@
+--- PF1 ---
+You are a culinary data engineer. Transform the following RECIPE TEXT into an R3 JSON object for a robotic chef.
+
+Constraints:
+- Output ONLY valid JSON (no markdown fences).
+- Fields: recipe_name, data_provenance{source_url, retrieved_at}, macronutrients{calories, protein_g, fat_g, carbs_g},
+  ingredients[{item, quantity, unit, notes}], instructions[{step_no, action, parameters, duration, temperature}].
+- Atomic steps: one action per instruction; clear, simple English; include numeric quantities/units when present.
+- If macronutrients are unknown, set them to null.
+
+Source URL: https://www.instructables.com/Rhubarb-Crumble-Vegan/
+Retrieved at: 2025-10-07T20:55:59Z
+
+RECIPE TEXT:
+Rhubarb Crumble (Vegan)
+Source: https://www.instructables.com/Rhubarb-Crumble-Vegan/
+Retrieved: 2025-10-07T20:55:59Z
+
+Ingredients:
+- Rhubarb - 5 sticks/ 500g /17.5oz/2.5 cups
+- Sugar - 125g / 4.4oz / 1/2 cup
+- Plain Flour - 250g /8.8oz / 1 cup
+- Vegan Butter or Margarine - 100g / 3.5oz / Just under 1/2 a cup
+
+Directions:
+1) Remove the outer skin from the rhubarb and chop the sticks into chunks.
+2) Place the rhubarb chunks into an oven-proof dish and sprinkle 125 g of sugar over the rhubarb.
+3) Add 250 g of plain flour and 100 g of vegan margarine or butter into a blender and blend for about 5 minutes.
+4) Pour the crumble over the rhubarb.
+5) Cook at 180 C / 350 F for 40 minutes until the crumble is golden brown.
+6) Serve warm; optionally with custard or ice cream.
+
+--- PF2 ---
+Act as a strict JSON generator. Convert the recipe into R3 JSON. Do not include prose or code fences.
+
+Schema (keys required):
+{
+  "recipe_name": "string",
+  "data_provenance": {"source_url": "string", "retrieved_at": "ISO8601"},
+  "macronutrients": {"calories": number|null, "protein_g": number|null, "fat_g": number|null, "carbs_g": number|null},
+  "ingredients": [{"item":"string","quantity":number|null,"unit":"string|null","notes":"string|null"}],
+  "instructions": [{"step_no":number,"action":"string","parameters":"string|null","duration":"string|null","temperature":"string|null"}]
+}
+
+Rules:
+- One action per instruction step.
+- Keep units consistent; convert ranges to a single representative value if needed.
+- Never invent ingredients not present in the text.
+
+INPUT:
+URL=https://www.instructables.com/Rhubarb-Crumble-Vegan/
+TIME=2025-10-07T20:55:59Z
+TEXT:
+Rhubarb Crumble (Vegan)
+Ingredients:
+- Rhubarb - 5 sticks/ 500g /17.5oz/2.5 cups
+- Sugar - 125g / 4.4oz / 1/2 cup
+- Plain Flour - 250g /8.8oz / 1 cup
+- Vegan Butter or Margarine - 100g / 3.5oz / Just under 1/2 a cup
+Directions:
+- Remove outer skin from rhubarb; chop into chunks.
+- Place rhubarb in oven-proof dish; sprinkle 125 g sugar.
+- Blend 250 g flour and 100 g vegan margarine/butter about 5 minutes.
+- Pour crumble over rhubarb; bake 40 minutes at 180 C / 350 F until golden brown.
+
+--- PF3 ---
+Goal: Produce valid R3 JSON for a robot. Validate before returning.
+
+Checklist BEFORE returning:
+- [ ] JSON parses
+- [ ] All required keys present
+- [ ] Each instruction is one atomic action
+- [ ] Units provided when present in text
+- [ ] data_provenance has source_url and retrieved_at
+- [ ] macronutrients: use null where unknown
+
+Convert this recipe now.
+URL: https://www.instructables.com/Rhubarb-Crumble-Vegan/
+TEXT:
+Rhubarb Crumble (Vegan)
+Ingredients:
+- Rhubarb - 5 sticks/ 500g /17.5oz/2.5 cups
+- Sugar - 125g / 4.4oz / 1/2 cup
+- Plain Flour - 250g /8.8oz / 1 cup
+- Vegan Butter or Margarine - 100g / 3.5oz / Just under 1/2 a cup
+Directions:
+- Remove outer skin from rhubarb; chop into chunks.
+- Place rhubarb in oven-proof dish; sprinkle 125 g sugar.
+- Blend 250 g flour and 100 g vegan margarine/butter ~5 minutes.
+- Pour crumble over rhubarb.
+- Bake 40 minutes at 180 C / 350 F until golden brown.
+
+--- PP-1 (ingredients only) ---
+Extract only INGREDIENTS as JSON array:
+[{"item":"...", "quantity": number|null, "unit": "string|null", "notes": "string|null"}]
+
+Rules:
+- Preserve units/quantities if present in the text
+- No extra commentary
+- Use null for unknowns
+
+TEXT:
+Rhubarb Crumble (Vegan)
+- Rhubarb - 5 sticks/ 500g /17.5oz/2.5 cups
+- Sugar - 125g / 4.4oz / 1/2 cup
+- Plain Flour - 250g /8.8oz / 1 cup
+- Vegan Butter or Margarine - 100g / 3.5oz / Just under 1/2 a cup
+
+--- PP-2 (instructions only) ---
+Extract only INSTRUCTIONS as JSON array of atomic steps:
+[{"step_no": number, "action": "string", "parameters": "string|null", "duration": "string|null", "temperature": "string|null"}]
+
+Rules:
+- One action per step (split multi-actions)
+- Include durations/temperatures when present; else null
+- Keep plain English and reference actual ingredients/tools from the text
+
+TEXT:
+- Remove outer skin from rhubarb.
+- Chop rhubarb into chunks.
+- Place rhubarb into oven-proof dish.
+- Sprinkle 125 g sugar over rhubarb.
+- Add 250 g flour and 100 g vegan margarine/butter into blender.
+- Blend about 5 minutes.
+- Pour crumble over rhubarb.
+- Bake 40 minutes at 180 C / 350 F until golden brown.

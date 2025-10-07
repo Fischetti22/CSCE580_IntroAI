@@ -1,0 +1,34 @@
+{
+  "recipe_name": "Blackened Tofu and Vegetables",
+  "data_provenance": {"source_url": "https://www.instructables.com/Blackened-Tofu-and-Vegetables/", "retrieved_at": "2025-10-07T20:46:55Z"},
+  "macronutrients": {"calories": null, "protein_g": null, "fat_g": null, "carbs_g": null},
+  "ingredients": [
+    { "item": "Hungarian sweet paprika", "quantity": 4, "unit": "tbsp", "notes": null },
+    { "item": "onion powder", "quantity": 2, "unit": "tbsp", "notes": null },
+    { "item": "salt", "quantity": 4, "unit": "tsp", "notes": "pink Himalayan sea salt noted" },
+    { "item": "ground black pepper", "quantity": 1, "unit": "tsp", "notes": null },
+    { "item": "ground white pepper", "quantity": 1, "unit": "tsp", "notes": null },
+    { "item": "dried thyme leaves", "quantity": 0.5, "unit": "tsp", "notes": null },
+    { "item": "dried basil leaves", "quantity": 0.5, "unit": "tsp", "notes": null },
+    { "item": "dried oregano leaves", "quantity": 0.5, "unit": "tsp", "notes": null },
+    { "item": "firm tofu", "quantity": 3, "unit": "block", "notes": "slice to 1/2 inch; pat dry" },
+    { "item": "butter", "quantity": 1.5, "unit": "tbsp", "notes": null },
+    { "item": "fresh basil leaves", "quantity": null, "unit": null, "notes": "handful; garnish" }
+  ],
+  "instructions": [
+    { "step_no": 1,  "action": "measure", "parameters": "measure listed spices for blackening rub", "duration": null, "temperature": null },
+    { "step_no": 2,  "action": "mix",     "parameters": "mix measured spices to make blackening rub", "duration": null, "temperature": null },
+    { "step_no": 3,  "action": "melt",    "parameters": "butter in large nonstick skillet", "duration": null, "temperature": "low heat" },
+    { "step_no": 4,  "action": "slice",   "parameters": "tofu to 1/2 inch thickness", "duration": null, "temperature": null },
+    { "step_no": 5,  "action": "pat",     "parameters": "tofu dry with paper towel", "duration": null, "temperature": null },
+    { "step_no": 6,  "action": "sprinkle", "parameters": "blackening rub on one side of tofu slices", "duration": null, "temperature": null },
+    { "step_no": 7,  "action": "set_heat", "parameters": "set burner to medium", "duration": null, "temperature": "medium heat" },
+    { "step_no": 8,  "action": "place",   "parameters": "tofu spice-side down in skillet", "duration": null, "temperature": "medium heat" },
+    { "step_no": 9,  "action": "sprinkle", "parameters": "blackening rub on top side of tofu", "duration": null, "temperature": null },
+    { "step_no": 10, "action": "cook",    "parameters": "cook first side of tofu", "duration": "several minutes", "temperature": "medium heat" },
+    { "step_no": 11, "action": "flip",    "parameters": "flip tofu slices", "duration": null, "temperature": null },
+    { "step_no": 12, "action": "cook",    "parameters": "cook second side of tofu", "duration": "several minutes", "temperature": "medium heat" },
+    { "step_no": 13, "action": "add",     "parameters": "fresh basil leaves to pan to wilt slightly", "duration": null, "temperature": null },
+    { "step_no": 14, "action": "serve",   "parameters": "serve hot", "duration": null, "temperature": null }
+  ]
+}

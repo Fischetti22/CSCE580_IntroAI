@@ -1,0 +1,15 @@
+file,score,plausible
+data/ingredients_recipe1.json,50,False
+data/ingredients_recipe2.json,50,False
+data/instructions_recipe1.json,50,False
+data/instructions_recipe2.json,50,False
+data/r3_recipe1_alt.json,100,True
+data/r3_recipe1_pf1.json,100,True
+data/r3_recipe1_pf2.json,100,True
+data/r3_recipe1_pf3.json,100,True
+data/r3_recipe1_pp.json,100,True
+data/r3_recipe2_alt.json,100,True
+data/r3_recipe2_pf1.json,100,True
+data/r3_recipe2_pf2.json,100,True
+data/r3_recipe2_pf3.json,100,True
+data/r3_recipe2_pp.json,100,True
