@@ -1,0 +1,228 @@
+--- PF1 ---
+You are a culinary data engineer. Transform the following RECIPE TEXT into an R3 JSON object for a robotic chef.
+
+Constraints:
+- Output ONLY valid JSON (no markdown fences).
+- Fields: recipe_name, data_provenance{source_url, retrieved_at}, macronutrients{calories, protein_g, fat_g, carbs_g},
+  ingredients[{item, quantity, unit, notes}], instructions[{step_no, action, parameters, duration, temperature}].
+- Atomic steps: one action per instruction; clear, simple English; include numeric quantities/units when present.
+- If macronutrients are unknown, set them to null.
+
+Source URL: https://www.instructables.com/Rhubarb-Crumble-Vegan/
+Retrieved at: 2025-10-07T20:56:41Z
+
+RECIPE TEXT:
+Rhubarb Crumble (Vegan)
+Source: https://www.instructables.com/Rhubarb-Crumble-Vegan/
+Retrieved: 2025-10-07T20:56:41Z
+
+Ingredients (from page; normalize units as needed):
+- Rhubarb stalks, chopped (about 4 cups / ~500 g)
+- Granulated sugar (about 1/2 cup / 100 g), divided
+- Lemon juice (1–2 tbsp) and zest (optional)
+- All-purpose flour (about 1 cup / 125 g)
+- Rolled oats (about 1/2 cup / 50 g)
+- Brown sugar (about 1/3 cup / 70 g)
+- Vegan butter or coconut oil (about 6 tbsp / 85 g), chilled
+- Pinch of salt
+- Cinnamon (optional)
+
+Instructions (atomic steps):
+1) Heat oven to 180°C / 350°F.
+2) Wash and chop rhubarb into ~2 cm pieces; pat dry.
+3) In a bowl, toss rhubarb with half of the granulated sugar and lemon juice; set aside 10 minutes to macerate.
+4) In a separate bowl, make crumble: mix flour, oats, brown sugar, salt, and cinnamon (if using).
+5) Cut vegan butter (or coconut oil) into the dry mix until coarse crumbs form.
+6) Drain excess liquid from rhubarb (if any); taste and adjust sweetness with remaining granulated sugar.
+7) Spread rhubarb evenly in a baking dish.
+8) Sprinkle crumble mixture evenly over rhubarb; do not pack down.
+9) Bake at 180°C / 350°F until topping is golden and filling is bubbling at edges (about 30–40 min).
+10) Cool on rack 10–15 minutes before serving.
+
+Notes:
+- Sweetness of rhubarb varies; adjust sugar to taste.
+- Serve with vegan ice cream or custard.
+
+
+--- PF2 ---
+Act as a strict JSON generator. Convert the recipe into R3 JSON. Do not include prose or code fences.
+
+Schema (keys required):
+{
+  "recipe_name": "string",
+  "data_provenance": {"source_url": "string", "retrieved_at": "ISO8601"},
+  "macronutrients": {"calories": number|null, "protein_g": number|null, "fat_g": number|null, "carbs_g": number|null},
+  "ingredients": [{"item":"string","quantity":number|null,"unit":"string|null","notes":"string|null"}],
+  "instructions": [{"step_no":number,"action":"string","parameters":"string|null","duration":"string|null","temperature":"string|null"}]
+}
+
+Rules:
+- One action per instruction step.
+- Keep units consistent; convert ranges to a single representative value if needed.
+- Never invent ingredients not present in the text.
+
+INPUT:
+URL=https://www.instructables.com/Rhubarb-Crumble-Vegan/
+TIME=2025-10-07T20:56:41Z
+TEXT:
+Rhubarb Crumble (Vegan)
+Source: https://www.instructables.com/Rhubarb-Crumble-Vegan/
+Retrieved: 2025-10-07T20:56:41Z
+
+Ingredients (from page; normalize units as needed):
+- Rhubarb stalks, chopped (about 4 cups / ~500 g)
+- Granulated sugar (about 1/2 cup / 100 g), divided
+- Lemon juice (1–2 tbsp) and zest (optional)
+- All-purpose flour (about 1 cup / 125 g)
+- Rolled oats (about 1/2 cup / 50 g)
+- Brown sugar (about 1/3 cup / 70 g)
+- Vegan butter or coconut oil (about 6 tbsp / 85 g), chilled
+- Pinch of salt
+- Cinnamon (optional)
+
+Instructions (atomic steps):
+1) Heat oven to 180°C / 350°F.
+2) Wash and chop rhubarb into ~2 cm pieces; pat dry.
+3) In a bowl, toss rhubarb with half of the granulated sugar and lemon juice; set aside 10 minutes to macerate.
+4) In a separate bowl, make crumble: mix flour, oats, brown sugar, salt, and cinnamon (if using).
+5) Cut vegan butter (or coconut oil) into the dry mix until coarse crumbs form.
+6) Drain excess liquid from rhubarb (if any); taste and adjust sweetness with remaining granulated sugar.
+7) Spread rhubarb evenly in a baking dish.
+8) Sprinkle crumble mixture evenly over rhubarb; do not pack down.
+9) Bake at 180°C / 350°F until topping is golden and filling is bubbling at edges (about 30–40 min).
+10) Cool on rack 10–15 minutes before serving.
+
+Notes:
+- Sweetness of rhubarb varies; adjust sugar to taste.
+- Serve with vegan ice cream or custard.
+
+
+--- PF3 ---
+Goal: Produce valid R3 JSON for a robot. Validate before returning.
+
+Checklist BEFORE returning:
+- [ ] JSON parses
+- [ ] All required keys present
+- [ ] Each instruction is one atomic action
+- [ ] Units provided when present in text
+- [ ] data_provenance has source_url and retrieved_at
+- [ ] macronutrients: use null where unknown
+
+Convert this recipe now.
+URL: https://www.instructables.com/Rhubarb-Crumble-Vegan/
+TEXT:
+Rhubarb Crumble (Vegan)
+Source: https://www.instructables.com/Rhubarb-Crumble-Vegan/
+Retrieved: 2025-10-07T20:56:41Z
+
+Ingredients (from page; normalize units as needed):
+- Rhubarb stalks, chopped (about 4 cups / ~500 g)
+- Granulated sugar (about 1/2 cup / 100 g), divided
+- Lemon juice (1–2 tbsp) and zest (optional)
+- All-purpose flour (about 1 cup / 125 g)
+- Rolled oats (about 1/2 cup / 50 g)
+- Brown sugar (about 1/3 cup / 70 g)
+- Vegan butter or coconut oil (about 6 tbsp / 85 g), chilled
+- Pinch of salt
+- Cinnamon (optional)
+
+Instructions (atomic steps):
+1) Heat oven to 180°C / 350°F.
+2) Wash and chop rhubarb into ~2 cm pieces; pat dry.
+3) In a bowl, toss rhubarb with half of the granulated sugar and lemon juice; set aside 10 minutes to macerate.
+4) In a separate bowl, make crumble: mix flour, oats, brown sugar, salt, and cinnamon (if using).
+5) Cut vegan butter (or coconut oil) into the dry mix until coarse crumbs form.
+6) Drain excess liquid from rhubarb (if any); taste and adjust sweetness with remaining granulated sugar.
+7) Spread rhubarb evenly in a baking dish.
+8) Sprinkle crumble mixture evenly over rhubarb; do not pack down.
+9) Bake at 180°C / 350°F until topping is golden and filling is bubbling at edges (about 30–40 min).
+10) Cool on rack 10–15 minutes before serving.
+
+Notes:
+- Sweetness of rhubarb varies; adjust sugar to taste.
+- Serve with vegan ice cream or custard.
+
+
+--- PP-1 (ingredients only) ---
+Extract only INGREDIENTS as JSON array:
+[{"item":"...", "quantity": number|null, "unit": "string|null", "notes": "string|null"}]
+
+Rules:
+- Preserve units/quantities if present in the text
+- No extra commentary
+- Use null for unknowns
+
+TEXT:
+Rhubarb Crumble (Vegan)
+Source: https://www.instructables.com/Rhubarb-Crumble-Vegan/
+Retrieved: 2025-10-07T20:56:41Z
+
+Ingredients (from page; normalize units as needed):
+- Rhubarb stalks, chopped (about 4 cups / ~500 g)
+- Granulated sugar (about 1/2 cup / 100 g), divided
+- Lemon juice (1–2 tbsp) and zest (optional)
+- All-purpose flour (about 1 cup / 125 g)
+- Rolled oats (about 1/2 cup / 50 g)
+- Brown sugar (about 1/3 cup / 70 g)
+- Vegan butter or coconut oil (about 6 tbsp / 85 g), chilled
+- Pinch of salt
+- Cinnamon (optional)
+
+Instructions (atomic steps):
+1) Heat oven to 180°C / 350°F.
+2) Wash and chop rhubarb into ~2 cm pieces; pat dry.
+3) In a bowl, toss rhubarb with half of the granulated sugar and lemon juice; set aside 10 minutes to macerate.
+4) In a separate bowl, make crumble: mix flour, oats, brown sugar, salt, and cinnamon (if using).
+5) Cut vegan butter (or coconut oil) into the dry mix until coarse crumbs form.
+6) Drain excess liquid from rhubarb (if any); taste and adjust sweetness with remaining granulated sugar.
+7) Spread rhubarb evenly in a baking dish.
+8) Sprinkle crumble mixture evenly over rhubarb; do not pack down.
+9) Bake at 180°C / 350°F until topping is golden and filling is bubbling at edges (about 30–40 min).
+10) Cool on rack 10–15 minutes before serving.
+
+Notes:
+- Sweetness of rhubarb varies; adjust sugar to taste.
+- Serve with vegan ice cream or custard.
+
+
+--- PP-2 (instructions only) ---
+Extract only INSTRUCTIONS as JSON array of atomic steps:
+[{"step_no": number, "action": "string", "parameters": "string|null", "duration": "string|null", "temperature": "string|null"}]
+
+Rules:
+- One action per step (split multi-actions)
+- Include durations/temperatures when present; else null
+- Keep plain English and reference actual ingredients/tools from the text
+
+TEXT:
+Rhubarb Crumble (Vegan)
+Source: https://www.instructables.com/Rhubarb-Crumble-Vegan/
+Retrieved: 2025-10-07T20:56:41Z
+
+Ingredients (from page; normalize units as needed):
+- Rhubarb stalks, chopped (about 4 cups / ~500 g)
+- Granulated sugar (about 1/2 cup / 100 g), divided
+- Lemon juice (1–2 tbsp) and zest (optional)
+- All-purpose flour (about 1 cup / 125 g)
+- Rolled oats (about 1/2 cup / 50 g)
+- Brown sugar (about 1/3 cup / 70 g)
+- Vegan butter or coconut oil (about 6 tbsp / 85 g), chilled
+- Pinch of salt
+- Cinnamon (optional)
+
+Instructions (atomic steps):
+1) Heat oven to 180°C / 350°F.
+2) Wash and chop rhubarb into ~2 cm pieces; pat dry.
+3) In a bowl, toss rhubarb with half of the granulated sugar and lemon juice; set aside 10 minutes to macerate.
+4) In a separate bowl, make crumble: mix flour, oats, brown sugar, salt, and cinnamon (if using).
+5) Cut vegan butter (or coconut oil) into the dry mix until coarse crumbs form.
+6) Drain excess liquid from rhubarb (if any); taste and adjust sweetness with remaining granulated sugar.
+7) Spread rhubarb evenly in a baking dish.
+8) Sprinkle crumble mixture evenly over rhubarb; do not pack down.
+9) Bake at 180°C / 350°F until topping is golden and filling is bubbling at edges (about 30–40 min).
+10) Cool on rack 10–15 minutes before serving.
+
+Notes:
+- Sweetness of rhubarb varies; adjust sugar to taste.
+- Serve with vegan ice cream or custard.
+

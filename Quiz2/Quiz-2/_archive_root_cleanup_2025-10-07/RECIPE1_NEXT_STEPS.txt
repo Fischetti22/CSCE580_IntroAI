@@ -1,0 +1,10 @@
+Recipe 1 set to: Blackened Tofu and Vegetables
+- Cleaned text saved: /mnt/data/Quiz-2/data/original_recipe1.txt
+- Prompts (PF/PP) prefilled: /mnt/data/Quiz-2/code/prompts_PF_PP_recipe1.txt
+Next:
+1) Run PF1–PF3 in your LLM UI and save outputs as data/r3_recipe1_pf1.json, pf2.json, pf3.json
+2) Run PP-1/PP-2 to produce ingredients_recipe1.json and instructions_recipe1.json (overwrite placeholders).
+3) Stitch partials:
+   python code/combine_partial.py --ingredients data/ingredients_recipe1.json --instructions data/instructions_recipe1.json --recipe_name "Blackened Tofu and Vegetables" --source_url "https://www.instructables.com/Blackened-Tofu-and-Vegetables/" --out data/r3_recipe1_pp.json
+4) Evaluate:
+   python code/eval.py data/r3_recipe1_*.json data/r3_recipe1_pp.json

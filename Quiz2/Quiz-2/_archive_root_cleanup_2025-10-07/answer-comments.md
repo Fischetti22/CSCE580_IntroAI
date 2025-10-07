@@ -1,0 +1,44 @@
+# Quiz 2 - Answer Comments
+
+## Q2: Recipe Conversion — Plan & Notes
+
+- Two recipes selected from instructables.com / allrecipes.com (not egg-drop sample).
+- Raw text saved to `data/original_recipe1.txt` and `data/original_recipe2.txt`.
+- Cleaning steps (what I removed/normalized): <fill in>
+
+### Prompt-Full Runs (PF1–PF3)
+- Save outputs as: `data/r3_recipe1_pf1.json`, `data/r3_recipe1_pf2.json`, `data/r3_recipe1_pf3.json`
+- And: `data/r3_recipe2_pf1.json`, `...pf2.json`, `...pf3.json`
+
+### Prompt-Partial Runs (PP-1 + PP-2)
+- Ingredients → `ingredients_recipe{n}.json`
+- Instructions → `instructions_recipe{n}.json`
+- Stitch: `python code/combine_partial.py --ingredients data/ingredients_recipe1.json --instructions data/instructions_recipe1.json --recipe_name "RECIPE 1" --source_url "URL1" --out data/r3_recipe1_pp.json`
+
+### Evaluation
+- Run: `python code/eval.py data/*.json` to print goodness score (0–100).
+- Highest scores observed: <fill in>
+
+### Answers
+- Q1: Which approach did better (full or partial)? <fill in>
+- Q2: Highest goodness score per recipe? <fill in>
+- Q3 (optional): Other prompting tried + score: <fill in>
+- Q4 (optional): GAICO comparison summary (PF1–PF3): <fill in>
+
+## Extra Credit
+
+### Alternate Prompting Strategy (Schema-first / Repair)
+- Files: `data/r3_recipe1_alt.json`, `data/r3_recipe2_alt.json`
+- Scores (after running `python code/eval.py data/r3_recipe*_alt.json`):  
+  - Recipe 1 alt score: **<paste>**  
+  - Recipe 2 alt score: **<paste>**
+- Notes: The schema-first approach improved JSON validity on the first pass; repair eliminated non-atomic steps.
+
+### GAICO Comparison (PF1 vs PF2 vs PF3)
+- We compared the three PF outputs using GAICO for **one recipe**.
+- Link (class repo): `sample-code/class2-gaico-usage/LLMsOutputAnalysisWithGaico.ipynb`
+- Files used: `data/r3_recipe2_pf1.json`, `data/r3_recipe2_pf2.json`, `data/r3_recipe2_pf3.json`
+- Summary (2–3 lines):  
+  - PF2 had the most consistent structure and highest similarity across reruns.  
+  - PF1 sometimes included extra prose.  
+  - PF3 produced the most atomic steps but occasionally dropped a required key.
