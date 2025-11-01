@@ -1,0 +1,4 @@
+test_case,name,complexity,expected,ft_pred,ft_conf,ft_correct,base_distilbert_pred,base_distilbert_conf,base_distilbert_correct,gpt2_pred,gpt2_conf,gpt2_correct,lr_pred,lr_conf,lr_correct
+1,Simple Short Positive Review,easy,positive,positive,99.70592260360718,True,positive,55.833256244659424,True,positive,97.31407165527344,True,N/A,0.0,False
+2,Complex Negative Review with Sarcasm,hard,negative,negative,99.9388337135315,True,positive,57.99923539161682,False,positive,99.07110333442688,False,N/A,0.0,False
+3,Medium-Length Positive Review with Caveats,medium,positive,positive,99.76949095726013,True,positive,56.672775745391846,True,positive,97.84375429153442,True,N/A,0.0,False
