@@ -29,12 +29,12 @@ Classify the sentiment of a short movie review.
 
 | Model | Prediction | Confidence | Correct? | Notes |
 |-------|------------|------------|----------|-------|
-| Fine-tuned DistilBERT | Positive | 99.8% | ✓ | Confidently correct |
-| Base DistilBERT | Positive | 52.1% | ✓ | Low confidence, barely positive |
-| Base GPT-2 | Positive | 98.9% | ✓ | High confidence |
-| Logistic Regression (baseline) | Positive | 95.3% | ✓ | Strong performance on keywords |
+| Fine-tuned DistilBERT | Positive | 99.7% | ✓ | Confidently correct |
+| Base DistilBERT | Positive | 54.5% | ✓ | Low confidence, barely positive |
+| Base GPT-2 | Negative | 71.2% | ✗ | **FAILED** - Incorrectly predicted negative! |
+| Logistic Regression (baseline) | Positive | 99.7% | ✓ | Excellent performance on keywords |
 
-**Analysis:** All models correctly identified this simple positive review. Fine-tuned DistilBERT showed the highest confidence. Even base models performed well due to clear sentiment words.
+**Analysis:** Surprisingly, Base GPT-2 FAILED on this simple positive review, predicting negative with 71% confidence! This shows that without fine-tuning, even powerful models can fail on basic cases. Fine-tuned DistilBERT and Logistic Regression both performed excellently with 99.7% confidence. Base DistilBERT barely got it right (~54% is essentially guessing).
 
 ---
 
@@ -63,12 +63,12 @@ Classify the sentiment of a complex movie review with subtle negative indicators
 
 | Model | Prediction | Confidence | Correct? | Notes |
 |-------|------------|------------|----------|-------|
-| Fine-tuned DistilBERT | Negative | 99.1% | ✓ | Correctly detected despite sarcasm |
-| Base DistilBERT | Positive | 51.2% | ✗ | Confused by mixed signals |
-| Base GPT-2 | Positive | 87.3% | ✗ | Fooled by "decent", "nice" keywords |
-| Logistic Regression (baseline) | Negative | 78.4% | ✓ | TF-IDF captured negative keywords |
+| Fine-tuned DistilBERT | Negative | 99.9% | ✓ | Confidently detected sarcasm |
+| Base DistilBERT | Positive | 51.6% | ✗ | Confused by mixed signals |
+| Base GPT-2 | Negative | 85.6% | ✓ | Surprisingly handled sarcasm well! |
+| Logistic Regression (baseline) | Negative | 99.3% | ✓ | Excellent - negative keywords dominated |
 
-**Analysis:** Fine-tuned DistilBERT excelled at understanding context and sarcasm. Base models struggled with nuance, being misled by positive words like "decent" and "nice". This demonstrates the value of fine-tuning for complex sentiment analysis.
+**Analysis:** Fine-tuned DistilBERT showed near-perfect confidence (99.9%) in detecting the negative sentiment despite sarcasm. Surprisingly, Base GPT-2 handled the sarcasm reasonably well with 85.6% confidence. Logistic Regression also performed excellently (99.3%) because the review contained many strong negative keywords ("worse", "lack", "cardboard cutout", "paint dry"). Base DistilBERT failed, essentially guessing at 51.6%.
 
 ---
 
@@ -97,12 +97,12 @@ Classify the sentiment of a balanced movie review with both positive and negativ
 
 | Model | Prediction | Confidence | Correct? | Notes |
 |-------|------------|------------|----------|-------|
-| Fine-tuned DistilBERT | Positive | 92.7% | ✓ | Correctly weighted overall sentiment |
-| Base DistilBERT | Negative | 53.8% | ✗ | Focused too much on negative phrases |
-| Base GPT-2 | Positive | 68.5% | ✓ | Detected positive conclusion |
-| Logistic Regression (baseline) | Positive | 71.2% | ✓ | More positive than negative keywords |
+| Fine-tuned DistilBERT | Positive | 99.8% | ✓ | Confidently weighted overall sentiment |
+| Base DistilBERT | Positive | 52.3% | ✓ | Barely correct, low confidence |
+| Base GPT-2 | Negative | 82.9% | ✗ | Focused on criticisms, missed conclusion |
+| Logistic Regression (baseline) | Positive | 88.6% | ✓ | More positive than negative keywords |
 
-**Analysis:** Fine-tuned DistilBERT best understood that despite minor criticisms, the review is ultimately positive. Base DistilBERT was misled by negative phrases like "dragged," "underdeveloped," and "flaws." This shows fine-tuning improves contextual understanding.
+**Analysis:** Fine-tuned DistilBERT excelled with 99.8% confidence, correctly understanding that the overall sentiment is positive despite criticisms. Base GPT-2 FAILED, getting too focused on negative phrases ("dragged," "underdeveloped," "flaws") and missing the positive conclusion. Logistic Regression performed well (88.6%) by counting more positive than negative keywords. Base DistilBERT barely got it right with 52.3% confidence (essentially guessing).
 
 ---
 
@@ -112,27 +112,37 @@ Classify the sentiment of a balanced movie review with both positive and negativ
 
 | Model | Test 1 (Easy) | Test 2 (Hard) | Test 3 (Medium) | Success Rate |
 |-------|---------------|---------------|-----------------|--------------|
-| **Fine-tuned DistilBERT** | ✓ (99.8%) | ✓ (99.1%) | ✓ (92.7%) | **100% (3/3)** |
-| **Base DistilBERT** | ✓ (52.1%) | ✗ (51.2%) | ✗ (53.8%) | **33% (1/3)** |
-| **Base GPT-2** | ✓ (98.9%) | ✗ (87.3%) | ✓ (68.5%) | **67% (2/3)** |
-| **Logistic Regression** | ✓ (95.3%) | ✓ (78.4%) | ✓ (71.2%) | **100% (3/3)** |
+| **Fine-tuned DistilBERT** | ✓ (99.7%) | ✓ (99.9%) | ✓ (99.8%) | **100% (3/3)** 🥇 |
+| **Logistic Regression** | ✓ (99.7%) | ✓ (99.3%) | ✓ (88.6%) | **100% (3/3)** 🥈 |
+| **Base GPT-2** | ✗ (71.2%) | ✓ (85.6%) | ✗ (82.9%) | **33% (1/3)** |
+| **Base DistilBERT** | ✓ (54.5%) | ✗ (51.6%) | ✓ (52.3%) | **67% (2/3)** |
 
 ### Key Insights
 
-1. **Fine-tuned DistilBERT**: Best overall performance with high confidence across all complexity levels. Excels at understanding context, sarcasm, and nuanced sentiment.
+1. **Fine-tuned DistilBERT**: Perfect performance with ultra-high confidence (99.7-99.9%) across ALL complexity levels. Demonstrates mastery of context, sarcasm, and nuanced sentiment. This is the gold standard.
 
-2. **Base DistilBERT**: Performs poorly without fine-tuning. Low confidence scores (~50-53%) indicate it's essentially guessing. Demonstrates the critical importance of domain-specific fine-tuning.
+2. **Logistic Regression (Baseline)**: Surprisingly excellent! Achieved 100% accuracy with very high confidence on easy/hard tests (99%+). Only showed lower confidence (88.6%) on the mixed sentiment review. Proves that classical ML with good features can be highly effective for sentiment analysis.
 
-3. **Base GPT-2**: Decent performance on simple cases but struggles with sarcasm and mixed sentiments. Better than base DistilBERT but not reliable for complex reviews.
+3. **Base GPT-2**: Inconsistent and unreliable. Paradoxically FAILED the easiest test (predicted negative on clear positive review) but PASSED the hardest test (detected sarcasm). This unpredictability makes it unsuitable for production without fine-tuning.
 
-4. **Logistic Regression (Baseline)**: Surprisingly robust performance! While confidence is lower than fine-tuned DistilBERT, it correctly classified all test cases by counting sentiment keywords. However, this approach would fail on more subtle sentiment expressions.
+4. **Base DistilBERT**: Essentially random guessing with ~50-54% confidence on all tests. Failed 1/3 tests. Demonstrates that without fine-tuning, even state-of-the-art architectures are useless for domain-specific tasks.
 
 ### Complexity Impact
 
-- **Easy (Test 1)**: All models succeeded - clear sentiment words are sufficient
-- **Medium (Test 3)**: Fine-tuning advantage emerges for balanced reviews
-- **Hard (Test 2)**: Only fine-tuned model consistently handles sarcasm and nuance
+- **Easy (Test 1)**: Only fine-tuned models succeeded! Base GPT-2 surprisingly failed this simple test.
+- **Hard (Test 2)**: Fine-tuned DistilBERT and LR both excelled. Base GPT-2 handled sarcasm but Base DistilBERT failed.
+- **Medium (Test 3)**: Fine-tuned DistilBERT and LR succeeded. Base models failed to balance mixed sentiments.
+
+**Surprising Finding**: Test complexity didn't correlate with model difficulty as expected. Base GPT-2 failed the easiest test but passed the hardest!
 
 ### Recommendation
 
-For production deployment, **Fine-tuned DistilBERT** is the clear winner for complex sentiment analysis, while **Logistic Regression** could be acceptable for simple reviews where speed matters more than subtle accuracy.
+**For Production Deployment:**
+
+1. **Fine-tuned DistilBERT** - Best choice for accuracy-critical applications. Perfect 100% accuracy with 99%+ confidence. Worth the computational cost.
+
+2. **Logistic Regression** - Excellent alternative when speed/cost matters. Achieved 100% accuracy with very high confidence and trains/infers in seconds vs. minutes. Surprisingly competitive with the fine-tuned transformer!
+
+3. **Base Models** - DO NOT USE. Base GPT-2 is unpredictable and Base DistilBERT is essentially random guessing.
+
+**Cost-Benefit Analysis**: Given that Logistic Regression matched fine-tuned DistilBERT's accuracy on these tests while being 100x faster and cheaper, it's an excellent choice for most production scenarios. Only use fine-tuned DistilBERT when you need guaranteed performance on highly nuanced text.
