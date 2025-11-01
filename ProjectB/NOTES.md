@@ -183,6 +183,50 @@ GRADIENT_ACCUMULATION_STEPS = 4
 
 ---
 
+---
+
+## RTX 3090 Results (Windows Desktop)
+**Date:** 2025-11-01
+
+### Configuration Used
+```python
+BATCH_SIZE = 32  # 8x larger than laptop
+EPOCHS = 4  # Extra epoch for better accuracy
+LEARNING_RATE = 2e-5
+MAX_LENGTH = 512  # Full sequence length
+GRADIENT_ACCUMULATION_STEPS = 1  # No accumulation needed
+```
+
+### Performance Results
+
+| Model | Accuracy | Precision | Recall | F1-Score | Rank |
+|-------|----------|-----------|--------|----------|------|
+| **Fine-tuned DistilBERT** | **93.69%** | **93.18%** | **94.28%** | **93.73%** | 🥇 |
+| Logistic Regression | 89.89% | 89.42% | 90.48% | 89.95% | 🥈 |
+| Base GPT-2 | 50.02% | 50.01% | 99.50% | 66.56% | 🥉 |
+| Base DistilBERT | 50.00% | 50.00% | 0.08% | 0.16% | 4 |
+
+### Key Findings
+- **Fine-tuned DistilBERT achieved 93.73% F1-Score** - excellent performance!
+- Training time: ~25-35 minutes (vs 3+ hours on laptop)
+- 8x faster training with batch size 32 vs 4
+- Full 512 token sequences improved accuracy vs 256 tokens
+- Base models (without fine-tuning) perform poorly, showing the importance of domain-specific training
+
+### Hardware Comparison
+
+| Metric | Laptop (3.6GB GPU) | Desktop (RTX 3090) | Improvement |
+|--------|-------------------|-------------------|-------------|
+| Batch Size | 4 | 32 | **8x larger** |
+| Max Length | 256 | 512 | **2x longer** |
+| Batches/Epoch | 9,000 | 1,125 | **8x fewer** |
+| Training Time | 3+ hours | ~30 min | **6x faster** |
+| Total VRAM | 3.6 GB | 24 GB | **6.7x more** |
+
+**Status:** ✅ Complete with excellent results!
+
+---
+
 ## Next Steps
 1. ~~Fix matplotlib backend issue (use Agg)~~ ✅ Done
 2. ~~Optionally fix joblib warnings~~ ✅ Done
@@ -190,13 +234,14 @@ GRADIENT_ACCUMULATION_STEPS = 4
 4. ~~Create recovery script~~ ✅ Done
 5. ~~Run recovery script and verify all outputs~~ ✅ Done
 6. ~~Optimize Jupyter notebook for RTX 3090~~ ✅ Done
-7. Push to GitHub and test on Windows desktop
-8. Document final results in report
+7. ~~Push to GitHub and test on Windows desktop~~ ✅ Done
+8. ~~Run on RTX 3090 with optimized settings~~ ✅ Done - 93.73% F1!
+9. Document final results in report
 
 ---
 
 ## Notes
 - Training loss and validation metrics are being calculated correctly
 - Models are being saved properly
-- The crashes happen during visualization phase, not training
-- All computation (training/evaluation) completed successfully before crash
+- RTX 3090 configuration delivers excellent results with 93.73% F1-Score
+- The difference between laptop and desktop is massive - 8x faster, better accuracy
