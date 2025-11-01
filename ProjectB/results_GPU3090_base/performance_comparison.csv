@@ -1,0 +1,5 @@
+Model,Accuracy,Precision,Recall,F1-Score,Rank
+Fine-tuned DistilBERT,0.9322,0.9417,0.9214,0.9315,1
+Logistic Regression,0.8989,0.8942,0.9048,0.8995,2
+Base GPT-2,0.5001,0.5001,0.9594,0.6574,3
+Base DistilBERT,0.4899,0.4946,0.9216,0.6437,4
