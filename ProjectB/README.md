@@ -18,6 +18,10 @@ This project implements and compares 4 different models for sentiment analysis:
 
 **Estimated time: 30-40 minutes total**
 
+### For CPU - NOT RECOMMENDED
+
+**Estimated time: 30-80 Hours total**
+
 1. Install Python 3.10+
 2. Install PyTorch with CUDA:
    ```powershell
@@ -246,8 +250,3 @@ ProjectB/
 - Run `pip install -r requirements.txt` again
 - Check Python version (3.8+ recommended)
 
-## Due Date
-
-**Thursday, November 20, 2025**
-
-Good luck! 🚀
