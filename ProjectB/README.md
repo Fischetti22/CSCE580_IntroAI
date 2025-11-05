@@ -186,7 +186,7 @@ ProjectB/
 ### Where to Find Everything:
 
 #### 1. **Code** [170 points]
-- **Main Notebook:** `imdb_sentiment_analysis.ipynb`
+- **Main Notebook:** `imdb_sentiment_analysis.ipynb` or `complete_analysis.py`
   - ✅ Data preprocessing (30 pts)
   - ✅ Fine-tuned DistilBERT training (50 pts)
   - ✅ Base DistilBERT + GPT-2 evaluation (60 pts)
