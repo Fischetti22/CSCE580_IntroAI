@@ -473,5 +473,5 @@ The surprisingly strong performance of Logistic Regression (89.95% F1-Score, 100
 
 ---
 
-**Report Complete**  
-**Total Points: 50/50** ✅
+**Report Complete** 
+
