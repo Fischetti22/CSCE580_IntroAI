@@ -1,51 +1,176 @@
 # IMDB Sentiment Analysis - CSCE 580 Project B
+ 
+**Due Date:** November 20, 2025  
+**Completed:** November 5, 2025
 
-Comparing LLMs (DistilBERT, GPT-2) with Classical ML for sentiment classification on IMDB movie reviews.
+This project compares LLMs (DistilBERT, GPT-2) with classical machine learning for sentiment classification on IMDB movie reviews.
 
-## Project Overview
+---
 
-This project implements and compares 4 different models for sentiment analysis:
+## Project Structure
+
+```
+ProjectB/
+├── README.md                              # This file
+├── requirements.txt                       # Python dependencies
+├── CSCE580-Fall2025-Project_...pdf        # Project requirements
+│
+├── notebooks/                             # Jupyter Notebooks
+│   └── imdb_sentiment_analysis.ipynb     # Main notebook
+│
+├── src/                                   # Python Scripts
+│   ├── imdb_analysis.py                  # Main training script
+│   ├── complete_analysis.py              # Quick analysis (if model exists)
+│   └── run_testcases.py                  # Test case evaluation
+│
+├── data/                                  # Dataset
+│   └── IMDB Dataset.csv                  # IMDB 50k movie reviews
+│
+├── models/                                # Trained Models
+│   └── finetuned_distilbert/             # Fine-tuned DistilBERT
+│
+├── results/                               # Main Results
+│   ├── confusion_matrices.png
+│   ├── metrics_comparison.png
+│   ├── performance_comparison.csv
+│   ├── testcase_results.csv
+│   └── loss_accuracy_curves.png
+│
+├── results_GPU3090_base/                  # GPU Results (Base config)
+│   └── (same files as above)
+│
+├── results_GPU3090_High/                  # GPU Results (High config)
+│   └── (same files as above)
+│
+└── docs/                                  # Documentation & Analysis
+    ├── testcases.md                      # AI test cases (GAICO format)
+    ├── analysis_questions.md             # Analysis & 5 questions answered
+    └── NOTES.md                          # Development log
+```
+
+---
+
+## How to Run
+
+I've provided two ways to run this project - you can use either one:
+
+### Option 1: Jupyter Notebook 
+
+If you just want to run everything quickly with Jupyter:
+
+
+```bash
+# Install dependencies
+pip install -r requirements.txt
+pip install jupyter
+
+# Launch notebook
+jupyter notebook notebooks/imdb_sentiment_analysis.ipynb
+
+# Run all cells in order
+```
+
+### Option 2: Python Script (What I Used)
+
+I found this better for seeing results step-by-step and debugging as I run on a Linux terminal:
+
+```bash
+# Full training and analysis
+python3 src/imdb_analysis.py
+
+# If the model is already trained
+python3 src/complete_analysis.py
+
+# Just run test cases
+python3 src/run_testcases.py
+```
+
+Both methods produce the same results.
+
+---
+
+## Hardware Requirements
+
+I ran this on different machines and here's what I found:
+
+**My RTX 3090 (24GB) - Best Option:**
+- Training time: 30-40 minutes
+- Config: BATCH_SIZE = 32, MAX_LENGTH = 512
+- This is what I used for final results
+
+**Smaller GPU (< 6GB):**
+- Training time: 2-3 hours  
+- Config: BATCH_SIZE = 4, MAX_LENGTH = 256
+- I had to use this on my laptop initially
+
+**CPU - Don't Recommend:**
+- Training time: 30-80 hours
+- Only use if you have no GPU
+
+---
+
+## Deliverables (400/400 Points) I hope
+
+Here's where to find everything for grading:
+
+| Deliverable | Location | Points |
+|-------------|----------|--------|
+| Main Code | `notebooks/imdb_sentiment_analysis.ipynb` | 170 pts |
+| | Alternative: `src/imdb_analysis.py` | |
+| Test Cases (GAICO) | `docs/testcases.md` | 30 pts |
+| Analysis Questions | `docs/analysis_questions.md` | 50 pts |
+| Confusion Matrices | `results/confusion_matrices.png` | 30 pts |
+| Metrics Chart | `results/metrics_comparison.png` | 30 pts |
+| Performance Table | `results/performance_comparison.csv` | 30 pts |
+| Test Results | `results/testcase_results.csv` | 10 pts |
+| Training Curves | In notebook output | 30 pts |
+| Time Complexity | In notebook/docs | 30 pts |
+| Development Notes | `docs/NOTES.md` | - |
+
+### Breakdown:
+
+**Code (170 points):**
+- Data preprocessing (30 pts)
+- Fine-tuned DistilBERT training (50 pts)
+- Base DistilBERT + GPT-2 evaluation (60 pts)
+- Logistic Regression with TF-IDF (30 pts)
+
+**Analysis & Visualizations (180 points):**
+- AI test cases in GAICO format (30 pts)
+- Accuracy & loss curves (30 pts)
+- Confusion matrices (30 pts)
+- Precision, recall, F1-score (30 pts)
+- Performance comparison table (30 pts)
+- Time complexity analysis (30 pts)
+
+**Questions (50 points):**
+- All 5 analysis questions answered
+
+---
+
+## What I Built
+
+I implemented and compared 4 different models for sentiment analysis:
+
 1. **Fine-tuned DistilBERT** - Transformer model fine-tuned on IMDB data
 2. **Base DistilBERT** - Pre-trained model without fine-tuning
 3. **Base GPT-2** - Pre-trained GPT-2 model
 4. **Logistic Regression** - Classical ML with TF-IDF features
 
-**Total Points:** 400
+### My Results:
 
-## Quick Start
+| Model | Accuracy | F1-Score | Training Time |
+|-------|----------|----------|---------------|
+| Fine-tuned DistilBERT | 93.69% | 93.73% | ~30 min (RTX 3090) |
+| Logistic Regression | 89.89% | 89.95% | ~2 min |
+| Base GPT-2 | 50.02% | 66.56% | N/A (pre-trained) |
+| Base DistilBERT | 50.00% | 0.16% | N/A (pre-trained) |
 
-### For RTX 3090 (Windows Desktop) - RECOMMENDED
+**What surprised me:** Logistic Regression performed really well - only 3.78% lower F1-score than the fine-tuned transformer while being 15x faster. The base models without fine-tuning were essentially useless, which really shows why domain-specific training matters.
 
-**Estimated time: 30-40 minutes total**
+---
 
-### For CPU - NOT RECOMMENDED
-
-**Estimated time: 30-80 Hours total**
-
-1. Install Python 3.10+
-2. Install PyTorch with CUDA:
-   ```powershell
-   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-   ```
-3. Install dependencies:
-   ```powershell
-   pip install -r requirements.txt
-   pip install jupyter
-   ```
-4. Open notebook:
-   ```powershell
-   jupyter notebook imdb_sentiment_analysis.ipynb
-   ```
-5. Run all cells! Training takes ~20-30 minutes on RTX 3090
-
-**Notebook is already optimized for RTX 3090:**
-- BATCH_SIZE = 32 (8x faster than small GPU)
-- MAX_LENGTH = 512 (full token length)
-- Includes matplotlib fix for Windows
-
-### For Small GPU (< 6GB) or CPU
-
-## Setup
+## Installation
 
 ### 1. Install Dependencies
 
@@ -53,200 +178,82 @@ This project implements and compares 4 different models for sentiment analysis:
 pip install -r requirements.txt
 ```
 
-Or install individually:
+Or if you want to install individually:
 ```bash
-pip install torch transformers datasets scikit-learn pandas numpy matplotlib seaborn accelerate
+pip install torch transformers datasets scikit-learn pandas numpy matplotlib seaborn accelerate jupyter
 ```
 
 ### 2. Verify Data
 
-The IMDB dataset should be in `data/IMDB Dataset.csv` (already present ✓)
+The IMDB dataset should be in `data/IMDB Dataset.csv` (it's already there)
 
-### 3. Run the Notebook
+### 3. Run
 
-Open and run `imdb_sentiment_analysis.ipynb` in Jupyter:
+Choose notebook or script (see "How to Run" section above)
 
-```bash
-jupyter notebook imdb_sentiment_analysis.ipynb
-```
+---
 
-Or use JupyterLab:
-```bash
-jupyter lab
-```
+## What Gets Generated
 
-## Project Structure
+When you run the code, it will create:
 
-```
-ProjectB/
-├── imdb_sentiment_analysis.ipynb  # Main notebook with all code
-├── requirements.txt                # Python dependencies
-├── README.md                       # This file
-├── data/
-│   └── IMDB Dataset.csv           # IMDB 50k movie reviews
-├── results/                        # Generated after running (plots, CSVs)
-│   ├── loss_accuracy_curves.png
-│   ├── confusion_matrices.png
-│   ├── metrics_comparison.png
-│   ├── time_complexity.png
-│   ├── performance_comparison.csv
-│   └── testcase_results.csv
-└── models/                         # Saved models
-    └── finetuned_distilbert/
-```
+- **Models:** Saved to `models/finetuned_distilbert/`
+- **Plots:** Generated in `results/` folder
+- **CSVs:** Performance metrics and test results
+- **Analysis:** Already complete in `docs/` folder
 
-## What the Notebook Does
+---
 
-### Data Preprocessing (30 pts)
-- Loads IMDB dataset (50k reviews)
-- Stratified train/val/test split (72%/8%/20%)
-- Tokenization for transformers
-- TF-IDF vectorization for classical ML
+## Tips from My Experience
 
-### Model Training & Evaluation
+1. **Use a GPU** - The code automatically detects CUDA. CPU training takes forever.
+2. **Run cells in order** - Don't skip around, especially in the notebook
+3. **Watch your memory** - Close other applications during training
+4. **Notebook vs Script** - I used the notebook for development, script for final runs
 
-**Fine-tuned DistilBERT (50 pts)**
-- 3 epochs with learning rate 2e-5
-- Training/validation loss monitoring
-- Saves model to `models/finetuned_distilbert/`
-
-**Base Models Comparison (60 pts)**
-- Base DistilBERT evaluation
-- Base GPT-2 evaluation
-- Performance comparison with fine-tuned version
-
-**Classical ML (30 pts)**
-- Logistic Regression with TF-IDF
-- Fast training and inference
-
-### Analysis & Visualizations
-
-**AI Test Cases (30 pts)**
-- 4 test cases with varying complexity
-- All models evaluated with confidence scores
-- GAICO format reporting
-
-**Accuracy & Loss Curves (30 pts)**
-- Training/validation curves
-- Overfitting analysis
-
-**Confusion Matrices (30 pts)**
-- 2x2 grid for all 4 models
-- False positive/negative rate analysis
-
-**Metrics (30 pts)**
-- Precision, Recall, F1-Score
-- Comparative bar charts
-
-**Performance Table (30 pts)**
-- Comprehensive comparison
-- Ranking by F1-Score
-
-**Time Complexity (30 pts)**
-- Training time comparison
-- Inference time per sample
-
-**Analysis Questions (50 pts)**
-- 5 detailed questions with answer templates
-- Must fill in actual results after running
-
-## Expected Runtime
-
-- **Data Loading:** ~10 seconds
-- **DistilBERT Fine-tuning:** ~30-60 minutes (GPU) / 3-6 hours (CPU)
-- **Base Model Evaluation:** ~5-10 minutes each
-- **Classical ML Training:** ~1-2 minutes
-- **Inference & Analysis:** ~10 minutes
-
-**Total:** ~1-2 hours with GPU, 4-8 hours with CPU
-
-## Hardware Requirements
-
-**Minimum:**
-- 8GB RAM
-- CPU (slow training)
-
-**Recommended:**
-- 16GB+ RAM
-- NVIDIA GPU with 6GB+ VRAM (CUDA)
-- 50GB disk space
-
-## Tips
-
-1. **Use GPU if available** - The notebook automatically detects CUDA
-2. **Run cells sequentially** - Don't skip cells
-3. **Monitor memory** - Close other applications during training
-4. **Save frequently** - Save notebook after each major section
-5. **Results directories** - Created automatically, don't need to make them
-
-## 📋 Project Deliverables (400/400 Points)
-
-**Status:** ✅ **COMPLETE** - All requirements met
-
-### Where to Find Everything:
-
-#### 1. **Code** [170 points]
-- **Main Notebook:** `imdb_sentiment_analysis.ipynb` or `complete_analysis.py`
-  - ✅ Data preprocessing (30 pts)
-  - ✅ Fine-tuned DistilBERT training (50 pts)
-  - ✅ Base DistilBERT + GPT-2 evaluation (60 pts)
-  - ✅ Logistic Regression with TF-IDF (30 pts)
-
-#### 2. **Analysis & Visualizations** [180 points]
-- **Test Cases:** `testcases.md` (30 pts)
-  - 3 test cases in GAICO format
-  - All 4 models evaluated with confidence scores
-  - Results in `results/testcase_results.csv`
-
-- **Analysis Questions:** `analysis_questions.md` (50 pts)
-  - All 5 questions answered with actual results
-
-- **Generated Plots in `results/` folder:** (100 pts)
-  - `confusion_matrices.png` - 4 confusion matrices (30 pts)
-  - `metrics_comparison.png` - Precision/Recall/F1 comparison (30 pts)
-  - `performance_comparison.csv` - Performance table (30 pts)
-  - Training curves available in notebook output (30 pts in notebook)
-
-#### 3. **Report & Documentation** [50 points]
-- **Report:** `analysis_questions.md` contains:
-  - ✅ All plots and analysis
-  - ✅ Confusion matrix analysis
-  - ✅ Performance comparison tables
-  - ✅ Answers to 5 required questions
-  - ✅ Time complexity analysis
-
-- **Additional Documentation:**
-  - `NOTES.md` - Development log and troubleshooting
-  - `README.md` - This file (setup and overview)
-
-### Quick Access to Key Files:
-
-```
-ProjectB/
-├── imdb_sentiment_analysis.ipynb  ← Main code (170 pts)
-├── testcases.md                   ← AI test cases (30 pts)
-├── analysis_questions.md          ← Analysis & questions (50 pts)
-├── results/
-│   ├── confusion_matrices.png     ← Visualizations (100 pts)
-│   ├── metrics_comparison.png
-│   ├── performance_comparison.csv
-│   └── testcase_results.csv
-└── models/finetuned_distilbert/   ← Trained model
-```
+---
 
 ## Troubleshooting
 
+Things I ran into and how I fixed them:
+
 **Out of Memory:**
-- Reduce `BATCH_SIZE` from 16 to 8 or 4
-- Use CPU instead of GPU
+- Reduce BATCH_SIZE: 32 → 16 → 8 → 4
+- Reduce MAX_LENGTH: 512 → 256
 - Close other applications
+- See my `docs/NOTES.md` for detailed fixes
 
 **Slow Training:**
-- Reduce `EPOCHS` from 3 to 2
-- Reduce `MAX_LENGTH` from 512 to 256
-- Use smaller subset of data for testing
+- Reduce EPOCHS from 3 to 2
+- Use a smaller dataset for testing
+- Try the script instead of notebook (slightly faster)
 
 **Import Errors:**
 - Run `pip install -r requirements.txt` again
-- Check Python version (3.8+ recommended)
+- Check Python version (I used 3.10, need at least 3.8)
 
+---
+
+## Additional Documentation
+
+- **Project Requirements:** See PDF in root directory
+- **Development Log:** `docs/NOTES.md` - How I solved problems during development
+- **Test Cases:** `docs/testcases.md` - GAICO format with all results
+- **Analysis:** `docs/analysis_questions.md` - All questions answered with my findings
+
+---
+
+## Completion Status
+
+Everything is complete and tested:
+
+- [x] All code implemented (notebook + scripts)
+- [x] All 4 models trained and evaluated
+- [x] Test cases created in GAICO format
+- [x] All visualizations generated
+- [x] All 5 analysis questions answered with actual results
+- [x] Documentation complete
+- [x] Repository organized
+- [x] Ready for submission
+
+The project ran successfully on my RTX 3090 and all results are in the `results/` folder. I also have different results that show the different outputs depending on the GPU.
