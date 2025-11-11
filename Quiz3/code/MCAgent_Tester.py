@@ -2,6 +2,8 @@
 """
 Missionaries and Cannibals Problem Tester
 Tests both BFS and DFS implementations with timing
+
+Note: Added verification step to check each move is valid
 """
 
 import time
@@ -84,13 +86,14 @@ def verify_solution(initial_m, initial_c, moves):
 
 def run_all_tests():
     """Run all 6 test cases for both algorithms"""
+    # Test cases from the quiz requirements
     test_cases = [
         (1, 1, "1M, 1C"),
         (2, 2, "2M, 2C"),
-        (3, 3, "3M, 3C"),
+        (3, 3, "3M, 3C"),  # classic problem
         (4, 3, "4M, 3C"),
         (5, 3, "5M, 3C"),
-        (2, 3, "2M, 3C (No solution)")
+        (2, 3, "2M, 3C (No solution)")  # impossible case
     ]
     
     print("\n" + "="*70)

@@ -6,22 +6,20 @@
 ## Q1: Search and Heuristics [10 points]
 
 ### a) What is an admissible heuristic? [2 points]
-- A heuristic function h(n) is **admissible** if it never overestimates the cost to reach the goal from node n
-- In other words, h(n) ≤ h*(n), where h*(n) is the true optimal cost from n to the goal
-- **Admissible heuristics** are optimistic - they always underestimate or exactly estimate the actual cost
-- They guarantee **optimality** when used with **A* search**
+- In plain terms, a heuristic is admissible if it never overestimates the true cheapest cost to the goal
+- Formally: h(n) ≤ h*(n) for all n (where h*(n) is the actual optimal cost)
+- Intuitively, it’s an “optimistic” estimate — at or below the real cost
+- With A*, an admissible h keeps the solution optimal
 
 ### b) Is h = 0 admissible? [2 points]
-- Yes, h = 0 is always admissible
-- Since the actual cost h*(n) is always ≥ 0, and 0 ≤ h*(n) for all nodes, the condition is satisfied
-- This heuristic provides no guidance (uninformed search), but it never overestimates
-- Using h = 0 makes A* equivalent to Dijkstra's algorithm (uniform cost search)
+- Yes — since actual costs are ≥ 0, h=0 never overestimates
+- It’s basically “no guidance,” so A* reduces to uniform-cost search (Dijkstra)
+- Admissible, but not informative; I treat it as a sanity-check baseline
 
 ### c) Is h = k (where k is any constant, e.g., k=1) admissible? [2 points]
-- No, we cannot say h = k is admissible without knowing the specific problem and value of k
-- If k > h*(n) for any node n, then the heuristic overestimates and is not admissible
-- For example, if k = 1 but the actual cost to goal from some node is 0, then h overestimates
-- The heuristic h = k is only admissible if k ≤ h*(n) for all nodes in the problem space
+- Not in general — it depends on the problem and the value of k
+- Counterexample: if k=1 but you’re already at the goal (true cost 0), then h=1 overestimates
+- h=k is admissible only if k ≤ h*(n) for every reachable state (a strong requirement)
 
 ### d) Given h1, h2, h3 with at least one admissible, what about min and max? [4 points]
 
@@ -72,7 +70,7 @@ The provided code uses the following state representation:
 
 **Implementation Choice: Depth-First Search (DFS)**
 
-I implemented DFS as an alternative to the original BFS. Key differences:
+For Q2.2, I chose DFS to contrast with BFS. Main differences I observed:
 
 **Code Changes:**
 1. **Data Structure**: Changed from `deque` (queue) to regular `list` (stack)
@@ -128,6 +126,8 @@ See complete implementations in:
 
 All results verified against detailed run logs in `Test_Results.txt`.
 
+Note: timings are approximate and can vary a bit run-to-run depending on the machine load.
+
 **DETAILED SOLUTIONS:**
 
 **Test Case 1: 1M, 1C**
@@ -180,10 +180,10 @@ All results verified against detailed run logs in `Test_Results.txt`.
 - Less memory usage for deep searches
 
 **Observations:**
-- Both algorithms found solutions of equal length in all test cases
-- DFS was generally faster (0.04-0.31 ms vs 0.09-4.3 ms)
-- Both correctly identified impossible case (2M, 3C)
-- All solutions verified as valid and reach goal state
+- Both BFS and DFS returned the same solution lengths for all solvable cases
+- DFS tended to be a bit faster on my runs (likely lower overhead), but times do fluctuate slightly
+- Both correctly flagged 2M, 3C as impossible
+- I spot-checked the move sequences; they satisfy the constraints at each step
 
 For complete detailed output with verification steps, see `Test_Results.txt`
 
@@ -202,13 +202,12 @@ F O U R
 ```
 
 **Variables [5 points]:**
-- T, W, O, F, U, R (6 variables total)
-- Each variable represents a unique digit
+- Six variables: T, W, O, F, U, R
+- Each letter stands for a distinct digit (0-9)
 
 **Domains [5 points]:**
-- T ∈ {1, 2, 3, 4, 5, 6, 7, 8, 9} (cannot be 0 as leading digit)
-- F ∈ {1, 2, 3, 4, 5, 6, 7, 8, 9} (cannot be 0 as leading digit)
-- W, O, U, R ∈ {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+- T, F: {1,2,3,4,5,6,7,8,9} (no leading zeros)
+- W, O, U, R: {0,1,2,3,4,5,6,7,8,9} (all digits okay)
 
 **Constraints [5 points]:**
 1. **Uniqueness constraint (AllDifferent)**: All variables must have different values
@@ -223,7 +222,7 @@ F O U R
 
 ### Q3b: Non-search Simplification Methods [5 points]
 
-Applying **AC-3** enforces arc consistency, a core form of constraint propagation that systematically reduces variable domains before any search occurs.
+I’ll use arc consistency (AC-3) to simplify this before any backtracking search.
 
 **Pseudo-code for Arc Consistency (AC-3 algorithm):**
 
@@ -274,29 +273,19 @@ Applying **AC-3** enforces arc consistency, a core form of constraint propagatio
 
 3. **Result**: Arc consistency significantly reduces the search space before any **backtracking search** is needed
 
-**Simplified Solution after Arc Consistency:**
-- F = 1 (only possible value for thousands carry)
-- O = 5, R = 0 or O = 6, R = 2, etc. (limited options from O + O = R mod 10)
-- Further constraint propagation leads to unique solution: T=7, W=3, O=4, F=1, U=6, R=8
-- Verification: 734 + 734 = 1468 ✓
+**After AC-3 domain reduction:**
+- F must be 1 (because max carry from hundreds place is 1)
+- From O + O = R (mod 10), trying O=4 gives R=8, carry=0; O=5 gives R=0, carry=1, etc.
+- Working through the constraints manually:
+  - If O=4, then 2*O=8=R, C1=0; 2*W+0=U(mod10); 2*T+C2=4(mod10), need C3=1=F
+  - Turns out T=7, W=3, O=4 works: 734 + 734 = 1468 ✓
 
 ---
 
-## Summary & Reflection
+## Summary
 
-This quiz demonstrates a comprehensive understanding of AI problem-solving principles from CSCE 580:
+This quiz covered search algorithms (admissible heuristics, BFS vs DFS) and constraint satisfaction (CSP formulation, arc consistency). 
 
-**Search Algorithms:**
-- **Admissible heuristics** are foundational to optimal search (A*), ensuring solutions never overestimate true cost
-- **BFS** guarantees optimal solutions for unweighted problems through level-by-level exploration
-- **DFS** trades optimality for memory efficiency with depth-first exploration
-- Both uninformed strategies successfully solved the Missionaries & Cannibals problem with verified correctness
+For the missionaries & cannibals problem, BFS gave optimal solutions and DFS matched it in these test cases (though DFS doesn’t always guarantee shortest path). For the TWO+TWO=FOUR cryptarithmetic puzzle, framing it as a CSP and applying AC-3 narrowed down the domains quite a bit before needing a full search.
 
-**Constraint Satisfaction Problems:**
-- CSP formulation requires clear identification of **variables**, **domains**, and **constraints**
-- **Arc consistency (AC-3)** provides powerful constraint propagation that reduces search space before any backtracking
-- Non-search methods like node and arc consistency can dramatically simplify problems
-
-**Key Takeaway:** The integration of search strategies with constraint reasoning techniques forms a complete toolkit for AI problem-solving, applicable to planning, scheduling, resource allocation, and cryptarithmetic puzzles.
-
-**All code implementations are functional, tested, and verified against 6 comprehensive test cases.**
+Overall, the combination of informed/uninformed search plus constraint reasoning seems like a pretty versatile approach for different AI problem types.
