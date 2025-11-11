@@ -1,0 +1,296 @@
+
+======================================================================
+MISSIONARIES AND CANNIBALS PROBLEM - COMPREHENSIVE TEST
+======================================================================
+
+
+######################################################################
+# TEST CASE: 1M, 1C
+######################################################################
+
+======================================================================
+Test Case: 1M, 1C | Algorithm: BFS
+======================================================================
+✓ Solution found!
+Number of moves: 1
+Move sequence: [(1, 1)]
+Execution time: 0.0370 ms
+
+Verification:
+Initial: Left(1M, 1C) | Right(0M, 0C) | Boat: Left
+Move 1: (1M, 1C) -> Left(0M, 0C) | Right(1M, 1C) | Boat: Right ✓
+✓ Goal state reached successfully!
+
+======================================================================
+Test Case: 1M, 1C | Algorithm: DFS
+======================================================================
+✓ Solution found!
+Number of moves: 1
+Move sequence: [(1, 1)]
+Execution time: 0.0308 ms
+
+Verification:
+Initial: Left(1M, 1C) | Right(0M, 0C) | Boat: Left
+Move 1: (1M, 1C) -> Left(0M, 0C) | Right(1M, 1C) | Boat: Right ✓
+✓ Goal state reached successfully!
+
+
+######################################################################
+# TEST CASE: 2M, 2C
+######################################################################
+
+======================================================================
+Test Case: 2M, 2C | Algorithm: BFS
+======================================================================
+✓ Solution found!
+Number of moves: 5
+Move sequence: [(0, 2), (0, 1), (2, 0), (1, 0), (1, 1)]
+Execution time: 0.0675 ms
+
+Verification:
+Initial: Left(2M, 2C) | Right(0M, 0C) | Boat: Left
+Move 1: (0M, 2C) -> Left(2M, 0C) | Right(0M, 2C) | Boat: Right ✓
+Move 2: (0M, 1C) -> Left(2M, 1C) | Right(0M, 1C) | Boat: Left ✓
+Move 3: (2M, 0C) -> Left(0M, 1C) | Right(2M, 1C) | Boat: Right ✓
+Move 4: (1M, 0C) -> Left(1M, 1C) | Right(1M, 1C) | Boat: Left ✓
+Move 5: (1M, 1C) -> Left(0M, 0C) | Right(2M, 2C) | Boat: Right ✓
+✓ Goal state reached successfully!
+
+======================================================================
+Test Case: 2M, 2C | Algorithm: DFS
+======================================================================
+✓ Solution found!
+Number of moves: 5
+Move sequence: [(1, 1), (1, 0), (2, 0), (0, 1), (0, 2)]
+Execution time: 0.0472 ms
+
+Verification:
+Initial: Left(2M, 2C) | Right(0M, 0C) | Boat: Left
+Move 1: (1M, 1C) -> Left(1M, 1C) | Right(1M, 1C) | Boat: Right ✓
+Move 2: (1M, 0C) -> Left(2M, 1C) | Right(0M, 1C) | Boat: Left ✓
+Move 3: (2M, 0C) -> Left(0M, 1C) | Right(2M, 1C) | Boat: Right ✓
+Move 4: (0M, 1C) -> Left(0M, 2C) | Right(2M, 0C) | Boat: Left ✓
+Move 5: (0M, 2C) -> Left(0M, 0C) | Right(2M, 2C) | Boat: Right ✓
+✓ Goal state reached successfully!
+
+
+######################################################################
+# TEST CASE: 3M, 3C
+######################################################################
+
+======================================================================
+Test Case: 3M, 3C | Algorithm: BFS
+======================================================================
+✓ Solution found!
+Number of moves: 11
+Move sequence: [(0, 2), (0, 1), (0, 2), (0, 1), (2, 0), (1, 1), (2, 0), (0, 1), (0, 2), (1, 0), (1, 1)]
+Execution time: 0.0975 ms
+
+Verification:
+Initial: Left(3M, 3C) | Right(0M, 0C) | Boat: Left
+Move 1: (0M, 2C) -> Left(3M, 1C) | Right(0M, 2C) | Boat: Right ✓
+Move 2: (0M, 1C) -> Left(3M, 2C) | Right(0M, 1C) | Boat: Left ✓
+Move 3: (0M, 2C) -> Left(3M, 0C) | Right(0M, 3C) | Boat: Right ✓
+Move 4: (0M, 1C) -> Left(3M, 1C) | Right(0M, 2C) | Boat: Left ✓
+Move 5: (2M, 0C) -> Left(1M, 1C) | Right(2M, 2C) | Boat: Right ✓
+Move 6: (1M, 1C) -> Left(2M, 2C) | Right(1M, 1C) | Boat: Left ✓
+Move 7: (2M, 0C) -> Left(0M, 2C) | Right(3M, 1C) | Boat: Right ✓
+Move 8: (0M, 1C) -> Left(0M, 3C) | Right(3M, 0C) | Boat: Left ✓
+Move 9: (0M, 2C) -> Left(0M, 1C) | Right(3M, 2C) | Boat: Right ✓
+Move 10: (1M, 0C) -> Left(1M, 1C) | Right(2M, 2C) | Boat: Left ✓
+Move 11: (1M, 1C) -> Left(0M, 0C) | Right(3M, 3C) | Boat: Right ✓
+✓ Goal state reached successfully!
+
+======================================================================
+Test Case: 3M, 3C | Algorithm: DFS
+======================================================================
+✓ Solution found!
+Number of moves: 11
+Move sequence: [(1, 1), (1, 0), (0, 2), (0, 1), (2, 0), (1, 1), (2, 0), (0, 1), (0, 2), (0, 1), (0, 2)]
+Execution time: 0.0837 ms
+
+Verification:
+Initial: Left(3M, 3C) | Right(0M, 0C) | Boat: Left
+Move 1: (1M, 1C) -> Left(2M, 2C) | Right(1M, 1C) | Boat: Right ✓
+Move 2: (1M, 0C) -> Left(3M, 2C) | Right(0M, 1C) | Boat: Left ✓
+Move 3: (0M, 2C) -> Left(3M, 0C) | Right(0M, 3C) | Boat: Right ✓
+Move 4: (0M, 1C) -> Left(3M, 1C) | Right(0M, 2C) | Boat: Left ✓
+Move 5: (2M, 0C) -> Left(1M, 1C) | Right(2M, 2C) | Boat: Right ✓
+Move 6: (1M, 1C) -> Left(2M, 2C) | Right(1M, 1C) | Boat: Left ✓
+Move 7: (2M, 0C) -> Left(0M, 2C) | Right(3M, 1C) | Boat: Right ✓
+Move 8: (0M, 1C) -> Left(0M, 3C) | Right(3M, 0C) | Boat: Left ✓
+Move 9: (0M, 2C) -> Left(0M, 1C) | Right(3M, 2C) | Boat: Right ✓
+Move 10: (0M, 1C) -> Left(0M, 2C) | Right(3M, 1C) | Boat: Left ✓
+Move 11: (0M, 2C) -> Left(0M, 0C) | Right(3M, 3C) | Boat: Right ✓
+✓ Goal state reached successfully!
+
+
+######################################################################
+# TEST CASE: 4M, 3C
+######################################################################
+
+======================================================================
+Test Case: 4M, 3C | Algorithm: BFS
+======================================================================
+✓ Solution found!
+Number of moves: 11
+Move sequence: [(0, 2), (0, 1), (2, 0), (1, 0), (1, 1), (0, 1), (2, 0), (0, 1), (0, 2), (1, 0), (1, 1)]
+Execution time: 0.1597 ms
+
+Verification:
+Initial: Left(4M, 3C) | Right(0M, 0C) | Boat: Left
+Move 1: (0M, 2C) -> Left(4M, 1C) | Right(0M, 2C) | Boat: Right ✓
+Move 2: (0M, 1C) -> Left(4M, 2C) | Right(0M, 1C) | Boat: Left ✓
+Move 3: (2M, 0C) -> Left(2M, 2C) | Right(2M, 1C) | Boat: Right ✓
+Move 4: (1M, 0C) -> Left(3M, 2C) | Right(1M, 1C) | Boat: Left ✓
+Move 5: (1M, 1C) -> Left(2M, 1C) | Right(2M, 2C) | Boat: Right ✓
+Move 6: (0M, 1C) -> Left(2M, 2C) | Right(2M, 1C) | Boat: Left ✓
+Move 7: (2M, 0C) -> Left(0M, 2C) | Right(4M, 1C) | Boat: Right ✓
+Move 8: (0M, 1C) -> Left(0M, 3C) | Right(4M, 0C) | Boat: Left ✓
+Move 9: (0M, 2C) -> Left(0M, 1C) | Right(4M, 2C) | Boat: Right ✓
+Move 10: (1M, 0C) -> Left(1M, 1C) | Right(3M, 2C) | Boat: Left ✓
+Move 11: (1M, 1C) -> Left(0M, 0C) | Right(4M, 3C) | Boat: Right ✓
+✓ Goal state reached successfully!
+
+======================================================================
+Test Case: 4M, 3C | Algorithm: DFS
+======================================================================
+✓ Solution found!
+Number of moves: 11
+Move sequence: [(1, 1), (0, 1), (1, 1), (1, 0), (1, 1), (0, 1), (1, 1), (1, 0), (1, 1), (0, 1), (1, 1)]
+Execution time: 0.0992 ms
+
+Verification:
+Initial: Left(4M, 3C) | Right(0M, 0C) | Boat: Left
+Move 1: (1M, 1C) -> Left(3M, 2C) | Right(1M, 1C) | Boat: Right ✓
+Move 2: (0M, 1C) -> Left(3M, 3C) | Right(1M, 0C) | Boat: Left ✓
+Move 3: (1M, 1C) -> Left(2M, 2C) | Right(2M, 1C) | Boat: Right ✓
+Move 4: (1M, 0C) -> Left(3M, 2C) | Right(1M, 1C) | Boat: Left ✓
+Move 5: (1M, 1C) -> Left(2M, 1C) | Right(2M, 2C) | Boat: Right ✓
+Move 6: (0M, 1C) -> Left(2M, 2C) | Right(2M, 1C) | Boat: Left ✓
+Move 7: (1M, 1C) -> Left(1M, 1C) | Right(3M, 2C) | Boat: Right ✓
+Move 8: (1M, 0C) -> Left(2M, 1C) | Right(2M, 2C) | Boat: Left ✓
+Move 9: (1M, 1C) -> Left(1M, 0C) | Right(3M, 3C) | Boat: Right ✓
+Move 10: (0M, 1C) -> Left(1M, 1C) | Right(3M, 2C) | Boat: Left ✓
+Move 11: (1M, 1C) -> Left(0M, 0C) | Right(4M, 3C) | Boat: Right ✓
+✓ Goal state reached successfully!
+
+
+######################################################################
+# TEST CASE: 5M, 3C
+######################################################################
+
+======================================================================
+Test Case: 5M, 3C | Algorithm: BFS
+======================================================================
+✓ Solution found!
+Number of moves: 13
+Move sequence: [(2, 0), (1, 0), (1, 1), (1, 0), (2, 0), (1, 0), (1, 1), (1, 0), (2, 0), (1, 0), (2, 0), (1, 0), (1, 1)]
+Execution time: 0.3526 ms
+
+Verification:
+Initial: Left(5M, 3C) | Right(0M, 0C) | Boat: Left
+Move 1: (2M, 0C) -> Left(3M, 3C) | Right(2M, 0C) | Boat: Right ✓
+Move 2: (1M, 0C) -> Left(4M, 3C) | Right(1M, 0C) | Boat: Left ✓
+Move 3: (1M, 1C) -> Left(3M, 2C) | Right(2M, 1C) | Boat: Right ✓
+Move 4: (1M, 0C) -> Left(4M, 2C) | Right(1M, 1C) | Boat: Left ✓
+Move 5: (2M, 0C) -> Left(2M, 2C) | Right(3M, 1C) | Boat: Right ✓
+Move 6: (1M, 0C) -> Left(3M, 2C) | Right(2M, 1C) | Boat: Left ✓
+Move 7: (1M, 1C) -> Left(2M, 1C) | Right(3M, 2C) | Boat: Right ✓
+Move 8: (1M, 0C) -> Left(3M, 1C) | Right(2M, 2C) | Boat: Left ✓
+Move 9: (2M, 0C) -> Left(1M, 1C) | Right(4M, 2C) | Boat: Right ✓
+Move 10: (1M, 0C) -> Left(2M, 1C) | Right(3M, 2C) | Boat: Left ✓
+Move 11: (2M, 0C) -> Left(0M, 1C) | Right(5M, 2C) | Boat: Right ✓
+Move 12: (1M, 0C) -> Left(1M, 1C) | Right(4M, 2C) | Boat: Left ✓
+Move 13: (1M, 1C) -> Left(0M, 0C) | Right(5M, 3C) | Boat: Right ✓
+✓ Goal state reached successfully!
+
+======================================================================
+Test Case: 5M, 3C | Algorithm: DFS
+======================================================================
+✓ Solution found!
+Number of moves: 13
+Move sequence: [(1, 1), (0, 1), (1, 1), (0, 1), (1, 1), (1, 0), (1, 1), (0, 1), (1, 1), (1, 0), (1, 1), (0, 1), (1, 1)]
+Execution time: 0.1357 ms
+
+Verification:
+Initial: Left(5M, 3C) | Right(0M, 0C) | Boat: Left
+Move 1: (1M, 1C) -> Left(4M, 2C) | Right(1M, 1C) | Boat: Right ✓
+Move 2: (0M, 1C) -> Left(4M, 3C) | Right(1M, 0C) | Boat: Left ✓
+Move 3: (1M, 1C) -> Left(3M, 2C) | Right(2M, 1C) | Boat: Right ✓
+Move 4: (0M, 1C) -> Left(3M, 3C) | Right(2M, 0C) | Boat: Left ✓
+Move 5: (1M, 1C) -> Left(2M, 2C) | Right(3M, 1C) | Boat: Right ✓
+Move 6: (1M, 0C) -> Left(3M, 2C) | Right(2M, 1C) | Boat: Left ✓
+Move 7: (1M, 1C) -> Left(2M, 1C) | Right(3M, 2C) | Boat: Right ✓
+Move 8: (0M, 1C) -> Left(2M, 2C) | Right(3M, 1C) | Boat: Left ✓
+Move 9: (1M, 1C) -> Left(1M, 1C) | Right(4M, 2C) | Boat: Right ✓
+Move 10: (1M, 0C) -> Left(2M, 1C) | Right(3M, 2C) | Boat: Left ✓
+Move 11: (1M, 1C) -> Left(1M, 0C) | Right(4M, 3C) | Boat: Right ✓
+Move 12: (0M, 1C) -> Left(1M, 1C) | Right(4M, 2C) | Boat: Left ✓
+Move 13: (1M, 1C) -> Left(0M, 0C) | Right(5M, 3C) | Boat: Right ✓
+✓ Goal state reached successfully!
+
+
+######################################################################
+# TEST CASE: 2M, 3C (No solution)
+######################################################################
+
+======================================================================
+Test Case: 2M, 3C | Algorithm: BFS
+======================================================================
+✗ No solution exists
+Execution time: 0.0679 ms
+
+======================================================================
+Test Case: 2M, 3C | Algorithm: DFS
+======================================================================
+✗ No solution exists
+Execution time: 0.0639 ms
+
+
+======================================================================
+SUMMARY OF RESULTS
+======================================================================
+
+Test Case                 Algorithm  Moves      Time (ms)      
+----------------------------------------------------------------------
+1M, 1C                    BFS        1          0.0370         
+                          DFS        1          0.0308         
+
+2M, 2C                    BFS        5          0.0675         
+                          DFS        5          0.0472         
+
+3M, 3C                    BFS        11         0.0975         
+                          DFS        11         0.0837         
+
+4M, 3C                    BFS        11         0.1597         
+                          DFS        11         0.0992         
+
+5M, 3C                    BFS        13         0.3526         
+                          DFS        13         0.1357         
+
+2M, 3C (No solution)      BFS        N/A        0.0679         
+                          DFS        N/A        0.0639         
+
+
+======================================================================
+ANALYSIS
+======================================================================
+
+BFS (Breadth-First Search):
+  - Explores nodes level by level
+  - Guarantees optimal solution (shortest path)
+  - Uses more memory (stores all nodes at current level)
+  - FIFO queue implementation
+
+DFS (Depth-First Search):
+  - Explores as deep as possible before backtracking
+  - Does NOT guarantee optimal solution
+  - Uses less memory (stores path from root)
+  - LIFO stack implementation
+
+Key Differences Observed:
+  - BFS finds shortest solution paths
+  - DFS may find longer paths but sometimes faster
+  - Both algorithms find solutions when they exist
+  - Both correctly identify impossible cases (2M, 3C)
