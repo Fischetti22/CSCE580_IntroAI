@@ -1,0 +1,29 @@
+Name			Topic				   Date			     What will system do
+
+Dustin		   SQL Fix Agent			Nov 18, 2025	      	 Give more accurate SQL information
+Aashiah		   AI Agent and The Law			Nov 18, 2025             Integrating legal agenciy priniciples into AI value
+Heling Lu	   Understanding Emotional Body	        Nov 18, 2025		 Enable human emotion using AI
+Yijun Tian         Graph Neural Prompting LLm           Nov 18, 2025             Preventing LLM's from hallucinate and lack factual grounding
+Shruti Jadhav      Algorathm Anchor?			Nov 18, 2025		 
+Jiaxuan Zhang	   Executable Code ACT			Nov 18, 2025		 CodeACT a novel framework that utilizes executable python code to consolidate LLM agents 
+Lily Lamb          Mulitmodel PointPillars              Nov 18, 2025             a lightweight fusion architecture for a 3D obeject detection in autonomous Vehicles 
+Sai Teja           AI to help road accidents            Nov 18, 2025            
+
+
+
+
+
+
+
+
+
+
+******************************Notes
+
+Dustin-- LLM struggle to produced semantically correct SQL. What will the System do spit out semantically accurate data
+Aashiah-- Would you use AI to shop and do your daily tasks?
+Heling Lu-- 
+Yijun Tian-- 
+Shruti Jadhav--
+Jiaxuan Zhang--
+Lily Lamb-- 
