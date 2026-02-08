@@ -13,7 +13,7 @@ Fall 2025, [Course Website](https://sites.google.com/site/biplavsrivastava/teach
 
 # Notable Moments
 ## Select projects that attending students agreed to make public
-1. Student attendance system - using paper-based checkin to analyze attendance. Highlighted efforts by [Suprawee Pongpeeradech](https://github.com/tysuprawee/AIAttendance-csce580fall2025/blob/main/report.md) and [Yamuna Bobbala](https://github.com/Ybobbala/AIAttendance-csce580fall2025/blob/main/code/AIAttendance.ipynb), 2025.
+1. Student attendance system - using paper-based checkin to analyze attendance. Highlighted efforts by [Suprawee Pongpeeradech](https://github.com/tysuprawee/AIAttendance-csce580fall2025/blob/main/report.md), [Yamuna Bobbala](https://github.com/Ybobbala/AIAttendance-csce580fall2025/blob/main/code/AIAttendance.ipynb), and [Eli Hatcher](https://github.com/elijahleo/AIAttendance-csce580fall2025/), 2025.
 2. Using fire department data, weather and traffic to forecast weekly demand, by S. Teja Palladi ([Demo app](https://drive.google.com/file/d/1mCFyvS4fP_xXq0FLxAc8Q23kzR_l_YOf/view?usp=sharing), 2025). 
    
 ## Select projects from previous courses that students agreed to make public
